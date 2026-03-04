@@ -111,13 +111,14 @@ import beepData from '../data/beepCodes.json';
           </div>
           <div class="beep-table-wrap">
             <table class="beep-table">
-              <thead><tr><th>{brand.codeHeader}</th><th>Description</th><th>Component</th></tr></thead>
+              <thead><tr><th>{brand.codeHeader}</th><th>Description</th><th>Component</th><th>BIOS Key</th></tr></thead>
               <tbody>
                 {brand.codes.map(c => (
                   <tr>
                     <td>{c.code}</td>
                     <td>{c.desc}</td>
                     <td class={`comp-badge ${c.badge}`}>{c.component}</td>
+                    <td class="bios-key-badge">{brand.biosKey}</td>
                   </tr>
                 ))}
               </tbody>
