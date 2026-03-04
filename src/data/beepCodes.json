@@ -1,0 +1,570 @@
+[
+  {
+    "id": "ami",
+    "label": "AMI BIOS",
+    "title": "AMI (American Megatrends Inc.) BIOS Beep Codes",
+    "note": "Common in many desktop and server motherboards. BIOS version may slightly change the meaning.",
+    "codeHeader": "Beep Code",
+    "codes": [
+      { "code": "1 short beep",       "desc": "DRAM refresh failure",                          "badge": "ram",  "component": "RAM" },
+      { "code": "2 short beeps",      "desc": "Parity circuit failure",                         "badge": "ram",  "component": "RAM" },
+      { "code": "3 short beeps",      "desc": "Base 64K RAM failure",                           "badge": "ram",  "component": "RAM" },
+      { "code": "4 short beeps",      "desc": "System timer failure",                           "badge": "mb",   "component": "Motherboard" },
+      { "code": "5 short beeps",      "desc": "Processor failure",                              "badge": "cpu",  "component": "CPU" },
+      { "code": "6 short beeps",      "desc": "Keyboard controller Gate A20 error",             "badge": "mb",   "component": "Motherboard" },
+      { "code": "7 short beeps",      "desc": "Virtual mode exception error",                   "badge": "cpu",  "component": "CPU" },
+      { "code": "8 short beeps",      "desc": "Display memory Read/Write test failure",         "badge": "gpu",  "component": "GPU" },
+      { "code": "9 short beeps",      "desc": "ROM BIOS checksum failure",                      "badge": "bios", "component": "BIOS" },
+      { "code": "10 short beeps",     "desc": "CMOS shutdown register read/write error",        "badge": "mb",   "component": "Motherboard" },
+      { "code": "11 short beeps",     "desc": "Cache memory error",                             "badge": "ram",  "component": "RAM" },
+      { "code": "1 long, 2 short",    "desc": "Video card memory issue",                        "badge": "gpu",  "component": "GPU" },
+      { "code": "1 long, 3 short",    "desc": "Conventional/Extended memory failure",           "badge": "ram",  "component": "RAM" },
+      { "code": "1 long, 8 short",    "desc": "Display/Retrace test failed",                    "badge": "gpu",  "component": "GPU" },
+      { "code": "Two-tone siren",     "desc": "Low CPU fan speed or voltage level issue",       "badge": "cpu",  "component": "CPU" }
+    ]
+  },
+  {
+    "id": "award",
+    "label": "Award BIOS",
+    "title": "Award BIOS Beep Codes",
+    "note": "Award BIOS (now part of Phoenix) is common in older motherboards. Most errors display a message if a screen is available.",
+    "codeHeader": "Beep Code",
+    "codes": [
+      { "code": "1 long, 2 short",              "desc": "Video error — BIOS cannot initialize the video screen", "badge": "gpu",  "component": "GPU" },
+      { "code": "1 long, 3 short",              "desc": "Video card not detected or bad video card",             "badge": "gpu",  "component": "GPU" },
+      { "code": "Repeating endlessly",          "desc": "RAM problem",                                           "badge": "ram",  "component": "RAM" },
+      { "code": "Repeated high frequency",      "desc": "Overheating processor",                                 "badge": "cpu",  "component": "CPU" },
+      { "code": "Alternating high & low",       "desc": "Processor issue, possibly damaged",                    "badge": "cpu",  "component": "CPU" }
+    ]
+  },
+  {
+    "id": "dell",
+    "label": "Dell",
+    "title": "Dell BIOS Beep Codes",
+    "note": "Applies to Dell desktops and laptops. Codes are consistent across most Dell models.",
+    "codeHeader": "Beep Code",
+    "codes": [
+      { "code": "1 beep",  "desc": "BIOS ROM corruption or failure", "badge": "bios", "component": "BIOS" },
+      { "code": "2 beeps", "desc": "Memory (RAM) not detected",       "badge": "ram",  "component": "RAM" },
+      { "code": "3 beeps", "desc": "Motherboard failure",             "badge": "mb",   "component": "Motherboard" },
+      { "code": "4 beeps", "desc": "Memory (RAM) failure",            "badge": "ram",  "component": "RAM" },
+      { "code": "5 beeps", "desc": "CMOS battery failure",            "badge": "mb",   "component": "Motherboard" },
+      { "code": "6 beeps", "desc": "Video card failure",              "badge": "gpu",  "component": "GPU" },
+      { "code": "7 beeps", "desc": "Bad processor (CPU)",             "badge": "cpu",  "component": "CPU" }
+    ]
+  },
+  {
+    "id": "ibm",
+    "label": "IBM BIOS",
+    "title": "IBM BIOS Beep Codes",
+    "note": "General IBM BIOS codes. Varies across different IBM models and generations.",
+    "codeHeader": "Beep Code",
+    "codes": [
+      { "code": "No beeps",              "desc": "No power or component not turning on",              "badge": "mb",  "component": "Motherboard" },
+      { "code": "1 short beep",          "desc": "Normal POST — computer is OK",                      "badge": "ok",  "component": "OK" },
+      { "code": "2 short beeps",         "desc": "POST error — review screen for error code",         "badge": "mb",  "component": "Motherboard" },
+      { "code": "Continuous beep",       "desc": "No power, loose card, or short circuit",            "badge": "mb",  "component": "Motherboard" },
+      { "code": "Repeating short beep",  "desc": "No power, loose card, or short circuit",            "badge": "mb",  "component": "Motherboard" },
+      { "code": "1 long, 1 short",       "desc": "Motherboard issue",                                 "badge": "mb",  "component": "Motherboard" },
+      { "code": "1 long, 2 short",       "desc": "Video (Mono/CGA display circuitry) issue",          "badge": "gpu", "component": "GPU" },
+      { "code": "1 long, 3 short",       "desc": "Video (EGA) display circuitry",                     "badge": "gpu", "component": "GPU" },
+      { "code": "3 long beeps",          "desc": "Keyboard or keyboard card error",                   "badge": "mb",  "component": "Keyboard" },
+      { "code": "1 beep + blank display","desc": "Video display circuitry",                           "badge": "gpu", "component": "GPU" }
+    ]
+  },
+  {
+    "id": "phoenix",
+    "label": "Phoenix BIOS",
+    "title": "Phoenix BIOS Beep Codes",
+    "note": "Phoenix uses a pattern of groups separated by pauses (e.g., 1-3-1-1 means 1 beep, pause, 3 beeps, pause, 1 beep, pause, 1 beep). Only the most common codes are listed.",
+    "codeHeader": "Beep Pattern",
+    "codes": [
+      { "code": "1-1-1-1",        "desc": "Unconfirmed — reseat or replace RAM chips",        "badge": "ram",  "component": "RAM" },
+      { "code": "1-3-1-1",        "desc": "Test DRAM refresh",                                "badge": "ram",  "component": "RAM" },
+      { "code": "1-3-3-1",        "desc": "Autosize DRAM failure",                            "badge": "ram",  "component": "RAM" },
+      { "code": "2-1-2-1",        "desc": "Initialize BIOS interrupts",                       "badge": "bios", "component": "BIOS" },
+      { "code": "2-1-3-2",        "desc": "Initialize PCI bus and devices",                   "badge": "mb",   "component": "Motherboard" },
+      { "code": "2-2-3-1",        "desc": "Test for unexpected interrupts",                   "badge": "cpu",  "component": "CPU" },
+      { "code": "3-1-1-1",        "desc": "Disable onboard I/O ports",                        "badge": "mb",   "component": "Motherboard" },
+      { "code": "3-2-1-1",        "desc": "Initialize hard disk controller",                  "badge": "mb",   "component": "Motherboard" },
+      { "code": "4-2-1-1",        "desc": "Interrupt handler error",                          "badge": "cpu",  "component": "CPU" },
+      { "code": "4-3-2-4",        "desc": "Complete RAM test failure",                        "badge": "ram",  "component": "RAM" },
+      { "code": "Two-tone siren", "desc": "Low CPU fan speed or voltage issue",               "badge": "cpu",  "component": "CPU" }
+    ]
+  },
+  {
+    "id": "hp",
+    "label": "HP / Compaq",
+    "title": "HP / Compaq BIOS Beep Codes",
+    "note": "Used in HP and Compaq desktops and laptops. Codes may vary slightly between models and generations.",
+    "codeHeader": "Beep Code",
+    "codes": [
+      { "code": "1 short beep",      "desc": "Normal POST — system is OK",                    "badge": "ok",   "component": "OK" },
+      { "code": "2 short beeps",     "desc": "POST error — check screen for code",            "badge": "mb",   "component": "Motherboard" },
+      { "code": "1 long, 1 short",   "desc": "BIOS ROM checksum error",                       "badge": "bios", "component": "BIOS" },
+      { "code": "1 long, 2 short",   "desc": "Video adapter error",                           "badge": "gpu",  "component": "GPU" },
+      { "code": "1 long, 3 short",   "desc": "No video card or bad video RAM",                "badge": "gpu",  "component": "GPU" },
+      { "code": "2 short, 1 long",   "desc": "RAM parity error in first 64K",                 "badge": "ram",  "component": "RAM" },
+      { "code": "3 long beeps",      "desc": "Keyboard controller error",                     "badge": "mb",   "component": "Motherboard" },
+      { "code": "4 beeps",           "desc": "System timer failure",                          "badge": "mb",   "component": "Motherboard" },
+      { "code": "5 beeps",           "desc": "Processor (CPU) failure",                       "badge": "cpu",  "component": "CPU" },
+      { "code": "6 beeps",           "desc": "Keyboard controller / Gate A20 failure",        "badge": "mb",   "component": "Motherboard" },
+      { "code": "7 beeps",           "desc": "Virtual mode exception error",                  "badge": "cpu",  "component": "CPU" },
+      { "code": "8 beeps",           "desc": "Display memory read/write failure",             "badge": "gpu",  "component": "GPU" },
+      { "code": "9 beeps",           "desc": "ROM BIOS checksum failure",                     "badge": "bios", "component": "BIOS" },
+      { "code": "Continuous beeps",  "desc": "Memory or video problem",                       "badge": "ram",  "component": "RAM" }
+    ]
+  },
+  {
+    "id": "lenovo",
+    "label": "Lenovo",
+    "title": "Lenovo BIOS Beep Codes",
+    "note": "Applies to Lenovo ThinkPad and ThinkCentre series. Some models use LED blink codes alongside beeps.",
+    "codeHeader": "Beep Code",
+    "codes": [
+      { "code": "1 short beep",      "desc": "Normal POST — system is OK",                    "badge": "ok",  "component": "OK" },
+      { "code": "2 short beeps",     "desc": "Initialization error — check screen",           "badge": "mb",  "component": "Motherboard" },
+      { "code": "1 long, 1 short",   "desc": "System board (motherboard) error",              "badge": "mb",  "component": "Motherboard" },
+      { "code": "1 long, 2 short",   "desc": "Video adapter error",                           "badge": "gpu", "component": "GPU" },
+      { "code": "1 long, 3 short",   "desc": "EGA/VGA video error",                           "badge": "gpu", "component": "GPU" },
+      { "code": "1 long, 4 short",   "desc": "Serial or parallel port error",                 "badge": "mb",  "component": "Motherboard" },
+      { "code": "2 long, 1 short",   "desc": "RAM/DRAM error",                                "badge": "ram", "component": "RAM" },
+      { "code": "2 long, 3 short",   "desc": "No display adapter or video error",             "badge": "gpu", "component": "GPU" },
+      { "code": "2 long, 4 short",   "desc": "Video adapter memory error",                    "badge": "gpu", "component": "GPU" },
+      { "code": "3 short beeps",     "desc": "DRAM error — memory module failure",            "badge": "ram", "component": "RAM" },
+      { "code": "Continuous beeps",  "desc": "Thermal shutdown — overheating",                "badge": "cpu", "component": "CPU" }
+    ]
+  },
+  {
+    "id": "asus",
+    "label": "Asus",
+    "title": "ASUS BIOS Beep Codes",
+    "note": "ASUS motherboards typically use AMI BIOS. Codes below apply to most ASUS desktop boards. Newer UEFI models may use Q-LEDs instead.",
+    "codeHeader": "Beep Code",
+    "codes": [
+      { "code": "1 short beep",          "desc": "DRAM refresh failure",                          "badge": "ram",  "component": "RAM" },
+      { "code": "2 short beeps",         "desc": "Parity circuit failure",                         "badge": "ram",  "component": "RAM" },
+      { "code": "3 short beeps",         "desc": "Base 64K RAM failure",                           "badge": "ram",  "component": "RAM" },
+      { "code": "4 short beeps",         "desc": "System timer failure",                           "badge": "mb",   "component": "Motherboard" },
+      { "code": "5 short beeps",         "desc": "Processor failure",                              "badge": "cpu",  "component": "CPU" },
+      { "code": "6 short beeps",         "desc": "Keyboard controller / Gate A20 error",           "badge": "mb",   "component": "Motherboard" },
+      { "code": "7 short beeps",         "desc": "Virtual mode exception error",                   "badge": "cpu",  "component": "CPU" },
+      { "code": "8 short beeps",         "desc": "Display memory failure",                         "badge": "gpu",  "component": "GPU" },
+      { "code": "9 short beeps",         "desc": "ROM BIOS checksum failure",                      "badge": "bios", "component": "BIOS" },
+      { "code": "10 short beeps",        "desc": "CMOS shutdown register error",                   "badge": "mb",   "component": "Motherboard" },
+      { "code": "1 long, 2 short",       "desc": "Video card not detected or faulty",              "badge": "gpu",  "component": "GPU" },
+      { "code": "1 long, 3 short",       "desc": "No RAM installed or RAM failure",                "badge": "ram",  "component": "RAM" },
+      { "code": "Continuous long beeps", "desc": "RAM not detected — reseat or replace",          "badge": "ram",  "component": "RAM" }
+    ]
+  },
+  {
+    "id": "acer",
+    "label": "Acer",
+    "title": "Acer BIOS Beep Codes",
+    "note": "Acer desktops and laptops use Phoenix or AMI BIOS depending on model. The codes below are for common Acer systems.",
+    "codeHeader": "Beep Code",
+    "codes": [
+      { "code": "1 beep",              "desc": "Normal POST — no error",                        "badge": "ok",  "component": "OK" },
+      { "code": "2 beeps",             "desc": "Video adapter error or not found",              "badge": "gpu", "component": "GPU" },
+      { "code": "3 beeps",             "desc": "Keyboard not detected",                         "badge": "mb",  "component": "Motherboard" },
+      { "code": "4 beeps",             "desc": "RAM error — not detected or failure",           "badge": "ram", "component": "RAM" },
+      { "code": "5 beeps",             "desc": "RTC (Real-Time Clock) error",                   "badge": "mb",  "component": "Motherboard" },
+      { "code": "6 beeps",             "desc": "BIOS image checksum error",                     "badge": "bios","component": "BIOS" },
+      { "code": "1 long, 1 short",     "desc": "System board failure",                          "badge": "mb",  "component": "Motherboard" },
+      { "code": "1 long, 2 short",     "desc": "Video card failure",                            "badge": "gpu", "component": "GPU" },
+      { "code": "1 long, 3 short",     "desc": "Memory error",                                  "badge": "ram", "component": "RAM" },
+      { "code": "High-low repeating",  "desc": "CPU overheating or fan failure",                "badge": "cpu", "component": "CPU" },
+      { "code": "Continuous beeps",    "desc": "Power supply or motherboard failure",           "badge": "mb",  "component": "Motherboard" }
+    ]
+  },
+  {
+    "id": "msi",
+    "label": "MSI",
+    "title": "MSI BIOS Beep Codes",
+    "note": "MSI motherboards use AMI BIOS. Codes match standard AMI patterns across most MSI desktop and server boards.",
+    "codeHeader": "Beep Code",
+    "codes": [
+      { "code": "1 short beep",          "desc": "DRAM refresh failure",                          "badge": "ram",  "component": "RAM" },
+      { "code": "2 short beeps",         "desc": "Parity circuit failure",                         "badge": "ram",  "component": "RAM" },
+      { "code": "3 short beeps",         "desc": "Base 64K RAM failure",                           "badge": "ram",  "component": "RAM" },
+      { "code": "4 short beeps",         "desc": "System timer failure",                           "badge": "mb",   "component": "Motherboard" },
+      { "code": "5 short beeps",         "desc": "Processor failure",                              "badge": "cpu",  "component": "CPU" },
+      { "code": "6 short beeps",         "desc": "Keyboard controller / Gate A20 error",           "badge": "mb",   "component": "Motherboard" },
+      { "code": "7 short beeps",         "desc": "Virtual mode exception error",                   "badge": "cpu",  "component": "CPU" },
+      { "code": "8 short beeps",         "desc": "Display memory read/write failure",              "badge": "gpu",  "component": "GPU" },
+      { "code": "9 short beeps",         "desc": "ROM BIOS checksum failure",                      "badge": "bios", "component": "BIOS" },
+      { "code": "10 short beeps",        "desc": "CMOS shutdown register error",                   "badge": "mb",   "component": "Motherboard" },
+      { "code": "1 long, 2 short",       "desc": "Video card not detected or faulty",              "badge": "gpu",  "component": "GPU" },
+      { "code": "1 long, 3 short",       "desc": "No RAM installed or RAM failure",                "badge": "ram",  "component": "RAM" },
+      { "code": "Continuous long beeps", "desc": "RAM not seated — reseat or replace",            "badge": "ram",  "component": "RAM" }
+    ]
+  },
+  {
+    "id": "gigabyte",
+    "label": "Gigabyte",
+    "title": "Gigabyte BIOS Beep Codes",
+    "note": "Gigabyte boards use Award or AMI BIOS depending on the generation. Newer UEFI boards may emit different tones.",
+    "codeHeader": "Beep Code",
+    "codes": [
+      { "code": "1 short beep",          "desc": "Normal POST — no error",                        "badge": "ok",  "component": "OK" },
+      { "code": "1 long, 2 short",       "desc": "Video card failure or not detected",            "badge": "gpu", "component": "GPU" },
+      { "code": "1 long, 3 short",       "desc": "No keyboard detected",                          "badge": "mb",  "component": "Motherboard" },
+      { "code": "2 short beeps",         "desc": "POST error — check screen for code",            "badge": "mb",  "component": "Motherboard" },
+      { "code": "Continuous long beeps", "desc": "RAM not detected — reseat or replace",         "badge": "ram", "component": "RAM" },
+      { "code": "Repeated short beeps",  "desc": "Power issue or short circuit",                  "badge": "mb",  "component": "Motherboard" },
+      { "code": "Repeated high frequency","desc": "CPU overheating",                              "badge": "cpu", "component": "CPU" }
+    ]
+  },
+  {
+    "id": "apple",
+    "label": "Apple / Mac",
+    "title": "Apple / Mac Beep Codes",
+    "note": "Apple uses tones instead of beeps. Newer Macs may use LED blink patterns alongside tones. Applies to Intel-based Macs.",
+    "codeHeader": "Beep / Tone Code",
+    "codes": [
+      { "code": "1 tone",                   "desc": "No RAM installed or not detected",                    "badge": "ram",  "component": "RAM" },
+      { "code": "2 tones",                  "desc": "Incompatible RAM types detected",                     "badge": "ram",  "component": "RAM" },
+      { "code": "3 tones",                  "desc": "No RAM banks passed memory testing",                  "badge": "ram",  "component": "RAM" },
+      { "code": "4 tones",                  "desc": "Bad checksum for boot ROM remainder",                 "badge": "bios", "component": "BIOS" },
+      { "code": "5 tones",                  "desc": "ROM cannot properly communicate with RAM",            "badge": "ram",  "component": "RAM" },
+      { "code": "6 tones",                  "desc": "Boot ROM does not support the sleep image",           "badge": "bios", "component": "BIOS" },
+      { "code": "3 long, 3 short, 3 long",  "desc": "EFI ROM corruption — update required",               "badge": "bios", "component": "BIOS" },
+      { "code": "1 long tone (hold power)", "desc": "EFI ROM corruption found — recovery mode",           "badge": "bios", "component": "BIOS" },
+      { "code": "Tones repeat 3×",          "desc": "RAM failure — reseat or replace DIMMs",              "badge": "ram",  "component": "RAM" }
+    ]
+  },
+  {
+    "id": "intel",
+    "label": "Intel Desktop",
+    "title": "Intel Desktop Board BIOS Beep Codes",
+    "note": "Applies to Intel brand desktop motherboards. Uses AMI BIOS. Consumer Intel boards have been discontinued but are still widely in use.",
+    "codeHeader": "Beep Code",
+    "codes": [
+      { "code": "1 beep",                    "desc": "BIOS ROM failure",                               "badge": "bios", "component": "BIOS" },
+      { "code": "2 beeps",                   "desc": "Processor failure",                              "badge": "cpu",  "component": "CPU" },
+      { "code": "3 beeps",                   "desc": "Memory error (first or third 64KB block)",       "badge": "ram",  "component": "RAM" },
+      { "code": "4 beeps",                   "desc": "Timer not operational",                          "badge": "mb",   "component": "Motherboard" },
+      { "code": "5 beeps",                   "desc": "Processor error",                                "badge": "cpu",  "component": "CPU" },
+      { "code": "6 beeps",                   "desc": "Gate A20 cannot be toggled (8042 error)",        "badge": "mb",   "component": "Motherboard" },
+      { "code": "7 beeps",                   "desc": "Processor exception interrupt error",            "badge": "cpu",  "component": "CPU" },
+      { "code": "8 beeps",                   "desc": "Display memory read/write failure",              "badge": "gpu",  "component": "GPU" },
+      { "code": "9 beeps",                   "desc": "ROM checksum error",                             "badge": "bios", "component": "BIOS" },
+      { "code": "10 beeps",                  "desc": "CMOS shutdown register error",                   "badge": "mb",   "component": "Motherboard" },
+      { "code": "11 beeps",                  "desc": "Cache memory error",                             "badge": "ram",  "component": "RAM" },
+      { "code": "3 continuous long beeps",   "desc": "Memory (RAM) error — reseat or replace",        "badge": "ram",  "component": "RAM" }
+    ]
+  },
+  {
+    "id": "toshiba",
+    "label": "Toshiba",
+    "title": "Toshiba BIOS Beep Codes",
+    "note": "Applies to Toshiba laptops and desktops. Uses Phoenix or AMI BIOS. Some models combine blink and beep codes.",
+    "codeHeader": "Beep Code",
+    "codes": [
+      { "code": "1 beep",            "desc": "Normal POST — no error",                        "badge": "ok",  "component": "OK" },
+      { "code": "2 beeps",           "desc": "POST failure — check screen for details",       "badge": "mb",  "component": "Motherboard" },
+      { "code": "1 long, 1 short",   "desc": "System board (motherboard) error",              "badge": "mb",  "component": "Motherboard" },
+      { "code": "1 long, 2 short",   "desc": "Video adapter failure",                         "badge": "gpu", "component": "GPU" },
+      { "code": "1 long, 3 short",   "desc": "No keyboard detected",                          "badge": "mb",  "component": "Motherboard" },
+      { "code": "3 beeps",           "desc": "Memory (RAM) failure",                          "badge": "ram", "component": "RAM" },
+      { "code": "Repeating beeps",   "desc": "RAM issue — reseat or replace module",          "badge": "ram", "component": "RAM" },
+      { "code": "Continuous beeps",  "desc": "Thermal shutdown — overheating",                "badge": "cpu", "component": "CPU" }
+    ]
+  },
+  {
+    "id": "asrock",
+    "label": "ASRock",
+    "title": "ASRock BIOS Beep Codes",
+    "note": "ASRock boards use AMI UEFI BIOS. Standard AMI beep codes apply. Newer models may also use Dr. Debug LED display.",
+    "codeHeader": "Beep Code",
+    "codes": [
+      { "code": "1 short beep",      "desc": "DRAM refresh failure",                          "badge": "ram",  "component": "RAM" },
+      { "code": "2 short beeps",     "desc": "Parity circuit failure",                         "badge": "ram",  "component": "RAM" },
+      { "code": "3 short beeps",     "desc": "Base 64K RAM failure",                           "badge": "ram",  "component": "RAM" },
+      { "code": "4 short beeps",     "desc": "System timer failure",                           "badge": "mb",   "component": "Motherboard" },
+      { "code": "5 short beeps",     "desc": "Processor failure",                              "badge": "cpu",  "component": "CPU" },
+      { "code": "6 short beeps",     "desc": "Keyboard controller / Gate A20 error",           "badge": "mb",   "component": "Motherboard" },
+      { "code": "7 short beeps",     "desc": "Virtual mode exception error",                   "badge": "cpu",  "component": "CPU" },
+      { "code": "8 short beeps",     "desc": "Display memory failure",                         "badge": "gpu",  "component": "GPU" },
+      { "code": "9 short beeps",     "desc": "ROM BIOS checksum failure",                      "badge": "bios", "component": "BIOS" },
+      { "code": "1 long, 2 short",   "desc": "Video card not detected or faulty",              "badge": "gpu",  "component": "GPU" },
+      { "code": "1 long, 3 short",   "desc": "No RAM installed or RAM failure",                "badge": "ram",  "component": "RAM" },
+      { "code": "Continuous beeps",  "desc": "RAM not detected — reseat or replace",          "badge": "ram",  "component": "RAM" }
+    ]
+  },
+  {
+    "id": "gateway",
+    "label": "Gateway",
+    "title": "Gateway / eMachines BIOS Beep Codes",
+    "note": "Gateway and eMachines desktops typically use AMI or Phoenix BIOS. Codes below apply to common Gateway models.",
+    "codeHeader": "Beep Code",
+    "codes": [
+      { "code": "1 beep",               "desc": "Normal POST — no error",                    "badge": "ok",  "component": "OK" },
+      { "code": "2 beeps",              "desc": "POST failure — check screen for code",       "badge": "mb",  "component": "Motherboard" },
+      { "code": "3 beeps",              "desc": "Keyboard controller error",                  "badge": "mb",  "component": "Motherboard" },
+      { "code": "1 long, 2 short",      "desc": "Video adapter error",                        "badge": "gpu", "component": "GPU" },
+      { "code": "1 long, 3 short",      "desc": "Video card not detected",                    "badge": "gpu", "component": "GPU" },
+      { "code": "Continuous beeps",     "desc": "RAM failure — reseat or replace",            "badge": "ram", "component": "RAM" },
+      { "code": "Repeated short beeps", "desc": "Power issue or loose component",             "badge": "mb",  "component": "Motherboard" }
+    ]
+  },
+  {
+    "id": "sony",
+    "label": "Sony VAIO",
+    "title": "Sony VAIO BIOS Beep Codes",
+    "note": "Sony VAIO laptops use AMI or Phoenix BIOS depending on the model. Some models use blink codes instead of beeps.",
+    "codeHeader": "Beep Code",
+    "codes": [
+      { "code": "1 beep",                  "desc": "Normal POST — no error",                       "badge": "ok",  "component": "OK" },
+      { "code": "2 beeps",                 "desc": "RAM failure — not detected or unseated",        "badge": "ram", "component": "RAM" },
+      { "code": "3 beeps",                 "desc": "Motherboard / system board error",              "badge": "mb",  "component": "Motherboard" },
+      { "code": "1 long, 2 short",         "desc": "Video card or display adapter failure",         "badge": "gpu", "component": "GPU" },
+      { "code": "Continuous beeps",        "desc": "Overheating or power issue",                    "badge": "cpu", "component": "CPU" },
+      { "code": "Repeating 2-beep pattern","desc": "RAM error — reseat or replace module",         "badge": "ram", "component": "RAM" },
+      { "code": "No beep + no display",    "desc": "Possible GPU or motherboard failure",           "badge": "gpu", "component": "GPU" }
+    ]
+  },
+  {
+    "id": "samsung",
+    "label": "Samsung",
+    "title": "Samsung BIOS Beep Codes",
+    "note": "Samsung desktops and laptops use AMI BIOS. Standard AMI codes apply. Some models also use LED blink diagnostic codes.",
+    "codeHeader": "Beep Code",
+    "codes": [
+      { "code": "1 beep",                  "desc": "Normal POST — no error",                       "badge": "ok",  "component": "OK" },
+      { "code": "2 beeps",                 "desc": "POST error — check screen for details",         "badge": "mb",  "component": "Motherboard" },
+      { "code": "3 beeps",                 "desc": "Memory (RAM) failure",                          "badge": "ram", "component": "RAM" },
+      { "code": "4 beeps",                 "desc": "System timer or motherboard failure",           "badge": "mb",  "component": "Motherboard" },
+      { "code": "5 beeps",                 "desc": "Processor (CPU) failure",                       "badge": "cpu", "component": "CPU" },
+      { "code": "1 long, 2 short",         "desc": "Video card not detected or faulty",             "badge": "gpu", "component": "GPU" },
+      { "code": "Continuous beeps",        "desc": "RAM not detected — reseat or replace",         "badge": "ram", "component": "RAM" },
+      { "code": "Repeated high-pitch beeps","desc": "CPU overheating or fan failure",              "badge": "cpu", "component": "CPU" }
+    ]
+  },
+  {
+    "id": "biostar",
+    "label": "Biostar",
+    "title": "Biostar BIOS Beep Codes",
+    "note": "Biostar motherboards use AMI BIOS. Standard AMI beep codes apply across all Biostar desktop boards.",
+    "codeHeader": "Beep Code",
+    "codes": [
+      { "code": "1 short beep",          "desc": "DRAM refresh failure",                          "badge": "ram",  "component": "RAM" },
+      { "code": "2 short beeps",         "desc": "Parity circuit failure",                         "badge": "ram",  "component": "RAM" },
+      { "code": "3 short beeps",         "desc": "Base 64K RAM failure",                           "badge": "ram",  "component": "RAM" },
+      { "code": "4 short beeps",         "desc": "System timer failure",                           "badge": "mb",   "component": "Motherboard" },
+      { "code": "5 short beeps",         "desc": "Processor failure",                              "badge": "cpu",  "component": "CPU" },
+      { "code": "6 short beeps",         "desc": "Keyboard controller / Gate A20 error",           "badge": "mb",   "component": "Motherboard" },
+      { "code": "7 short beeps",         "desc": "Virtual mode exception error",                   "badge": "cpu",  "component": "CPU" },
+      { "code": "8 short beeps",         "desc": "Display memory read/write failure",              "badge": "gpu",  "component": "GPU" },
+      { "code": "9 short beeps",         "desc": "ROM BIOS checksum failure",                      "badge": "bios", "component": "BIOS" },
+      { "code": "10 short beeps",        "desc": "CMOS shutdown register read/write error",        "badge": "mb",   "component": "Motherboard" },
+      { "code": "11 short beeps",        "desc": "Cache memory error",                             "badge": "ram",  "component": "RAM" },
+      { "code": "1 long, 2 short",       "desc": "Video card not detected or faulty",              "badge": "gpu",  "component": "GPU" },
+      { "code": "1 long, 3 short",       "desc": "No RAM installed or RAM failure",                "badge": "ram",  "component": "RAM" },
+      { "code": "Continuous long beeps", "desc": "RAM not detected — reseat or replace",          "badge": "ram",  "component": "RAM" }
+    ]
+  },
+  {
+    "id": "ecs",
+    "label": "ECS",
+    "title": "ECS (Elitegroup Computer Systems) BIOS Beep Codes",
+    "note": "ECS motherboards use AMI or Award BIOS. Commonly found in OEM builds and budget desktops.",
+    "codeHeader": "Beep Code",
+    "codes": [
+      { "code": "1 short beep",          "desc": "Normal POST — no error (Award) or DRAM refresh failure (AMI)", "badge": "ok",  "component": "OK / RAM" },
+      { "code": "1 long, 2 short",       "desc": "Video card failure or not detected",                           "badge": "gpu", "component": "GPU" },
+      { "code": "1 long, 3 short",       "desc": "Video card not found",                                         "badge": "gpu", "component": "GPU" },
+      { "code": "2 short beeps",         "desc": "POST error — check screen for code",                           "badge": "mb",  "component": "Motherboard" },
+      { "code": "3 short beeps",         "desc": "Base 64K RAM failure",                                         "badge": "ram", "component": "RAM" },
+      { "code": "5 short beeps",         "desc": "Processor failure",                                            "badge": "cpu", "component": "CPU" },
+      { "code": "Continuous beeps",      "desc": "RAM not detected — reseat or replace",                        "badge": "ram", "component": "RAM" },
+      { "code": "Repeating endlessly",   "desc": "RAM problem",                                                  "badge": "ram", "component": "RAM" },
+      { "code": "Alternating high & low","desc": "Processor issue, possibly damaged",                           "badge": "cpu", "component": "CPU" }
+    ]
+  },
+  {
+    "id": "foxconn",
+    "label": "Foxconn",
+    "title": "Foxconn BIOS Beep Codes",
+    "note": "Foxconn retail motherboards use AMI BIOS. Foxconn also manufactures boards for other OEMs under different BIOS flavors.",
+    "codeHeader": "Beep Code",
+    "codes": [
+      { "code": "1 short beep",      "desc": "DRAM refresh failure",                          "badge": "ram",  "component": "RAM" },
+      { "code": "2 short beeps",     "desc": "Parity circuit failure",                         "badge": "ram",  "component": "RAM" },
+      { "code": "3 short beeps",     "desc": "Base 64K RAM failure",                           "badge": "ram",  "component": "RAM" },
+      { "code": "4 short beeps",     "desc": "System timer failure",                           "badge": "mb",   "component": "Motherboard" },
+      { "code": "5 short beeps",     "desc": "Processor failure",                              "badge": "cpu",  "component": "CPU" },
+      { "code": "6 short beeps",     "desc": "Keyboard controller / Gate A20 error",           "badge": "mb",   "component": "Motherboard" },
+      { "code": "7 short beeps",     "desc": "Virtual mode exception error",                   "badge": "cpu",  "component": "CPU" },
+      { "code": "8 short beeps",     "desc": "Display memory failure",                         "badge": "gpu",  "component": "GPU" },
+      { "code": "9 short beeps",     "desc": "ROM BIOS checksum failure",                      "badge": "bios", "component": "BIOS" },
+      { "code": "1 long, 2 short",   "desc": "Video card not detected or faulty",              "badge": "gpu",  "component": "GPU" },
+      { "code": "1 long, 3 short",   "desc": "No RAM installed or RAM failure",                "badge": "ram",  "component": "RAM" },
+      { "code": "Continuous beeps",  "desc": "RAM not detected — reseat or replace",          "badge": "ram",  "component": "RAM" }
+    ]
+  },
+  {
+    "id": "zotac",
+    "label": "Zotac",
+    "title": "Zotac BIOS Beep Codes",
+    "note": "Zotac mini-PCs and desktop boards use AMI UEFI BIOS. Standard AMI codes apply. Many Zotac systems are fanless/compact.",
+    "codeHeader": "Beep Code",
+    "codes": [
+      { "code": "1 short beep",      "desc": "DRAM refresh failure",                          "badge": "ram",  "component": "RAM" },
+      { "code": "3 short beeps",     "desc": "Base 64K RAM failure",                           "badge": "ram",  "component": "RAM" },
+      { "code": "4 short beeps",     "desc": "System timer failure",                           "badge": "mb",   "component": "Motherboard" },
+      { "code": "5 short beeps",     "desc": "Processor failure",                              "badge": "cpu",  "component": "CPU" },
+      { "code": "8 short beeps",     "desc": "Display memory failure",                         "badge": "gpu",  "component": "GPU" },
+      { "code": "1 long, 2 short",   "desc": "Video card not detected or faulty",              "badge": "gpu",  "component": "GPU" },
+      { "code": "1 long, 3 short",   "desc": "No RAM installed or RAM failure",                "badge": "ram",  "component": "RAM" },
+      { "code": "Continuous beeps",  "desc": "RAM not detected — reseat or replace",          "badge": "ram",  "component": "RAM" }
+    ]
+  },
+  {
+    "id": "supermicro",
+    "label": "Supermicro",
+    "title": "Supermicro BIOS Beep Codes",
+    "note": "Supermicro server and workstation boards use AMI BIOS. These codes are widely used in rack-mount and blade server environments.",
+    "codeHeader": "Beep Code",
+    "codes": [
+      { "code": "1 short beep",      "desc": "DRAM refresh failure",                              "badge": "ram",  "component": "RAM" },
+      { "code": "2 short beeps",     "desc": "Parity circuit failure",                             "badge": "ram",  "component": "RAM" },
+      { "code": "3 short beeps",     "desc": "Base 64K RAM failure",                               "badge": "ram",  "component": "RAM" },
+      { "code": "4 short beeps",     "desc": "System timer failure",                               "badge": "mb",   "component": "Motherboard" },
+      { "code": "5 short beeps",     "desc": "Processor failure",                                  "badge": "cpu",  "component": "CPU" },
+      { "code": "6 short beeps",     "desc": "Keyboard controller / Gate A20 error",               "badge": "mb",   "component": "Motherboard" },
+      { "code": "7 short beeps",     "desc": "Virtual mode CPU exception",                         "badge": "cpu",  "component": "CPU" },
+      { "code": "8 short beeps",     "desc": "Display memory read/write failure",                  "badge": "gpu",  "component": "GPU" },
+      { "code": "9 short beeps",     "desc": "ROM BIOS checksum error",                            "badge": "bios", "component": "BIOS" },
+      { "code": "10 short beeps",    "desc": "CMOS shutdown register error",                       "badge": "mb",   "component": "Motherboard" },
+      { "code": "11 short beeps",    "desc": "Cache memory BAD",                                   "badge": "ram",  "component": "RAM" },
+      { "code": "1 long, 2 short",   "desc": "Video card memory error",                            "badge": "gpu",  "component": "GPU" },
+      { "code": "1 long, 3 short",   "desc": "Conventional/Extended memory failure",               "badge": "ram",  "component": "RAM" },
+      { "code": "1 long, 8 short",   "desc": "Display / retrace test failed",                      "badge": "gpu",  "component": "GPU" },
+      { "code": "Continuous beeps",  "desc": "System memory failure — check DIMMs and slots",     "badge": "ram",  "component": "RAM" }
+    ]
+  },
+  {
+    "id": "fujitsu",
+    "label": "Fujitsu",
+    "title": "Fujitsu / Fujitsu-Siemens BIOS Beep Codes",
+    "note": "Fujitsu desktops and laptops (including ESPRIMO and LIFEBOOK lines) use Phoenix or AMI BIOS depending on model generation.",
+    "codeHeader": "Beep Code",
+    "codes": [
+      { "code": "1 beep",             "desc": "Normal POST — system is OK",                    "badge": "ok",  "component": "OK" },
+      { "code": "2 beeps",            "desc": "POST error — check screen for code",            "badge": "mb",  "component": "Motherboard" },
+      { "code": "3 beeps",            "desc": "Memory (RAM) failure",                          "badge": "ram", "component": "RAM" },
+      { "code": "4 beeps",            "desc": "System timer failure",                          "badge": "mb",  "component": "Motherboard" },
+      { "code": "5 beeps",            "desc": "CPU failure",                                   "badge": "cpu", "component": "CPU" },
+      { "code": "1 long, 1 short",    "desc": "System board failure",                          "badge": "mb",  "component": "Motherboard" },
+      { "code": "1 long, 2 short",    "desc": "Video card failure or not found",               "badge": "gpu", "component": "GPU" },
+      { "code": "1 long, 3 short",    "desc": "No keyboard found",                             "badge": "mb",  "component": "Motherboard" },
+      { "code": "Continuous beeps",   "desc": "RAM not detected — reseat or replace",         "badge": "ram", "component": "RAM" },
+      { "code": "Repeating high-low", "desc": "Overheating — check cooling",                   "badge": "cpu", "component": "CPU" }
+    ]
+  },
+  {
+    "id": "nec",
+    "label": "NEC",
+    "title": "NEC BIOS Beep Codes",
+    "note": "NEC desktops and laptops (including Versa and PowerMate lines) use Phoenix or AMI BIOS. Common in Japanese and enterprise markets.",
+    "codeHeader": "Beep Code",
+    "codes": [
+      { "code": "1 beep",               "desc": "Normal POST — no error",                        "badge": "ok",  "component": "OK" },
+      { "code": "2 beeps",              "desc": "Video card or display adapter failure",          "badge": "gpu", "component": "GPU" },
+      { "code": "3 beeps",              "desc": "Keyboard error or not found",                    "badge": "mb",  "component": "Motherboard" },
+      { "code": "1 long, 1 short",      "desc": "Motherboard failure",                            "badge": "mb",  "component": "Motherboard" },
+      { "code": "1 long, 2 short",      "desc": "Video adapter error",                            "badge": "gpu", "component": "GPU" },
+      { "code": "1 long, 3 short",      "desc": "Video (EGA) error",                              "badge": "gpu", "component": "GPU" },
+      { "code": "Continuous beeps",     "desc": "RAM failure — reseat or replace DIMMs",         "badge": "ram", "component": "RAM" },
+      { "code": "Repeating short beeps","desc": "Power supply or motherboard issue",              "badge": "mb",  "component": "Motherboard" }
+    ]
+  },
+  {
+    "id": "packardbell",
+    "label": "Packard Bell",
+    "title": "Packard Bell BIOS Beep Codes",
+    "note": "Packard Bell desktops and laptops use Phoenix or AMI BIOS. Common in European markets. Now owned by Acer.",
+    "codeHeader": "Beep Code",
+    "codes": [
+      { "code": "1 beep",              "desc": "Normal POST — no error",                        "badge": "ok",  "component": "OK" },
+      { "code": "2 beeps",             "desc": "POST failure — check screen for code",          "badge": "mb",  "component": "Motherboard" },
+      { "code": "3 beeps",             "desc": "Memory (RAM) failure",                          "badge": "ram", "component": "RAM" },
+      { "code": "1 long, 1 short",     "desc": "System board error",                            "badge": "mb",  "component": "Motherboard" },
+      { "code": "1 long, 2 short",     "desc": "Video card failure or not detected",            "badge": "gpu", "component": "GPU" },
+      { "code": "1 long, 3 short",     "desc": "Keyboard or video error",                       "badge": "mb",  "component": "Motherboard" },
+      { "code": "Continuous beeps",    "desc": "RAM not detected — reseat or replace",         "badge": "ram", "component": "RAM" },
+      { "code": "Repeating high-low",  "desc": "CPU overheating or fan failure",                "badge": "cpu", "component": "CPU" }
+    ]
+  },
+  {
+    "id": "panasonic",
+    "label": "Panasonic",
+    "title": "Panasonic Toughbook BIOS Beep Codes",
+    "note": "Panasonic Toughbook ruggedized laptops use Phoenix BIOS. Some models combine beep codes with LED indicators for field diagnostics.",
+    "codeHeader": "Beep Code",
+    "codes": [
+      { "code": "1 beep",            "desc": "Normal POST — system is OK",                    "badge": "ok",  "component": "OK" },
+      { "code": "2 beeps",           "desc": "POST error — check screen for code",            "badge": "mb",  "component": "Motherboard" },
+      { "code": "1 long, 1 short",   "desc": "System board error",                            "badge": "mb",  "component": "Motherboard" },
+      { "code": "1 long, 2 short",   "desc": "Video adapter failure",                         "badge": "gpu", "component": "GPU" },
+      { "code": "1 long, 3 short",   "desc": "Memory test failure",                           "badge": "ram", "component": "RAM" },
+      { "code": "3 beeps",           "desc": "Keyboard failure or not detected",              "badge": "mb",  "component": "Motherboard" },
+      { "code": "Continuous beeps",  "desc": "RAM failure — module not detected",             "badge": "ram", "component": "RAM" },
+      { "code": "Repeating beeps",   "desc": "Overheating — check thermal system",            "badge": "cpu", "component": "CPU" }
+    ]
+  },
+  {
+    "id": "olivetti",
+    "label": "Olivetti",
+    "title": "Olivetti BIOS Beep Codes",
+    "note": "Olivetti desktops and laptops use Phoenix BIOS. Primarily found in European enterprise and education environments.",
+    "codeHeader": "Beep Code",
+    "codes": [
+      { "code": "1 beep",               "desc": "Normal POST — no error",                        "badge": "ok", "component": "OK" },
+      { "code": "1 long, 1 short",      "desc": "System board failure",                          "badge": "mb", "component": "Motherboard" },
+      { "code": "1 long, 2 short",      "desc": "Video adapter error",                           "badge": "gpu","component": "GPU" },
+      { "code": "1 long, 3 short",      "desc": "Video (EGA) display circuitry error",           "badge": "gpu","component": "GPU" },
+      { "code": "2 short beeps",        "desc": "POST error — check screen for code",            "badge": "mb", "component": "Motherboard" },
+      { "code": "Continuous beep",      "desc": "No power, loose card or short circuit",         "badge": "mb", "component": "Motherboard" },
+      { "code": "Repeating short beep", "desc": "No power, loose card or short circuit",         "badge": "mb", "component": "Motherboard" },
+      { "code": "3 long beeps",         "desc": "Keyboard error or not detected",                "badge": "mb", "component": "Motherboard" }
+    ]
+  },
+  {
+    "id": "compaq",
+    "label": "Compaq (Pre-HP)",
+    "title": "Compaq BIOS Beep Codes (Pre-HP)",
+    "note": "Original Compaq desktops and laptops (before HP acquisition) used a proprietary BIOS. Codes differ from the HP/Compaq combined line.",
+    "codeHeader": "Beep Code",
+    "codes": [
+      { "code": "1 short beep",         "desc": "No error — system booting normally",            "badge": "ok",  "component": "OK" },
+      { "code": "1 long, 1 short",      "desc": "BIOS ROM failure",                              "badge": "bios","component": "BIOS" },
+      { "code": "1 long, 2 short",      "desc": "Video failure (Mono/CGA)",                      "badge": "gpu", "component": "GPU" },
+      { "code": "1 long, 3 short",      "desc": "Video failure (EGA/VGA)",                       "badge": "gpu", "component": "GPU" },
+      { "code": "2 short beeps",        "desc": "POST error — review screen message",            "badge": "mb",  "component": "Motherboard" },
+      { "code": "Continuous beep",      "desc": "No power, loose card or short circuit",         "badge": "mb",  "component": "Motherboard" },
+      { "code": "Repeating short beep", "desc": "No power, loose card or short circuit",         "badge": "mb",  "component": "Motherboard" },
+      { "code": "3 long beeps",         "desc": "Keyboard or keyboard controller error",         "badge": "mb",  "component": "Motherboard" },
+      { "code": "1 beep + blank display","desc": "Video display circuitry failure",              "badge": "gpu", "component": "GPU" }
+    ]
+  },
+  {
+    "id": "tandy",
+    "label": "Tandy",
+    "title": "Tandy BIOS Beep Codes",
+    "note": "Tandy 1000 series PCs used a proprietary BIOS based on IBM XT/AT spec. A collector's reference for legacy hardware diagnostics.",
+    "codeHeader": "Beep Code",
+    "codes": [
+      { "code": "1 short beep",          "desc": "Normal POST — system is OK",                   "badge": "ok",  "component": "OK" },
+      { "code": "2 short beeps",         "desc": "POST error — review screen for code",          "badge": "mb",  "component": "Motherboard" },
+      { "code": "Continuous beep",       "desc": "No power or loose card",                       "badge": "mb",  "component": "Motherboard" },
+      { "code": "Repeating short beep",  "desc": "No power or short circuit",                    "badge": "mb",  "component": "Motherboard" },
+      { "code": "1 long, 1 short",       "desc": "System board failure",                         "badge": "mb",  "component": "Motherboard" },
+      { "code": "1 long, 2 short",       "desc": "Video (Mono/CGA) display circuitry issue",     "badge": "gpu", "component": "GPU" },
+      { "code": "1 long, 3 short",       "desc": "Video (EGA) display circuitry issue",          "badge": "gpu", "component": "GPU" },
+      { "code": "3 long beeps",          "desc": "Keyboard or keyboard card error",               "badge": "mb",  "component": "Motherboard" },
+      { "code": "1 beep + blank screen", "desc": "Video display failure",                        "badge": "gpu", "component": "GPU" }
+    ]
+  }
+]
