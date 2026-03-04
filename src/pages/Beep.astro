@@ -167,7 +167,13 @@ import beepData from '../data/beepCodes.json';
       if (tab) tab.classList.add('active');
       const sel = document.querySelector('.beep-select');
       if (sel) sel.value = name;
+      localStorage.setItem('beep-selected', name);
     }
+
+    (function () {
+      const saved = localStorage.getItem('beep-selected');
+      if (saved) showTab(saved);
+    })();
   </script>
 
 </body>
