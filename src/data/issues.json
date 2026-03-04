@@ -1,0 +1,50 @@
+[
+  {
+    "product": "RTX 5070 Ti",
+    "issue": "Stats screen flickering (7inch display)",
+    "solution": "Update GPU drivers and monitor firmware",
+    "source": "https://www.nvidia.com/en-us/geforce/forums/geforce-graphics-cards/5/582390/rtx-5070-ti-and-7inch-stats-screen/"
+  },
+  {
+    "product": "RTX 5070",
+    "issue": "Black screen and reboots after installation",
+    "solution": "Uninstall old drivers first, use DDU (Display Driver Uninstaller)",
+    "source": "https://example.com/forum/..."
+  },
+    {
+    "product": "RTX 5070",
+    "issue": "RTX 5070 Graphic and performance issues.",
+    "solution": "Uninstall old drivers first, use DDU (Display Driver Uninstaller)",
+    "source": "https://community.thefunpimps.com/threads/rtx-5070-graphic-and-performance-issues.42783/"
+  },
+
+  {
+    "product": "RTX 3080",
+    "issue": "3080 issue after update to new drivers",
+    "solution": "None as of yet",
+    "source": "https://www.nvidia.com/en-us/geforce/forums/game-ready-drivers/13/528575/3080-issue-after-update-to-new-drivers/"
+  },
+
+   {
+    "product": "RTX 3090",
+    "issue": "RTX 3090 Keeps Crashing",
+    "solution": "None as of yet",
+    "source": "https://www.nvidia.com/en-us/geforce/forums/geforce-graphics-cards/5/408137/rtx-3090-keeps-crashing/"
+   },
+
+   { 
+    "product": "RTX 3060",
+    "issue": "RTX 3060 Keeps Crashing",
+    "solution": "None as of yet",
+    "source": "https://www.nvidia.com/en-us/geforce/forums/geforce-graphics-cards/5/408137/rtx-3090-keeps-crashing/"
+   },
+
+   { 
+    "product": "RTX 3050",
+    "issue": "RTX 3050 Freezing issue",
+    "solution": "https://www.nvidia.com/en-us/geforce/news/dune-spice-wars-game-ready-driver",
+    "source": "https://www.nvidia.com/en-us/geforce/forums/geforce-graphics-cards/5/486962/rtx-3050-freezing-issue/"
+   }
+
+
+]

@@ -1,0 +1,213 @@
+/* ── Page Background ────────────────────────────────────── */
+body {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #2c2c3e;
+  background: #f8f9ff;
+}
+
+/* ── Section decorative side accents ───────────────────── */
+section {
+  position: relative;
+  overflow: hidden;
+}
+
+section::before,
+section::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.07;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Large circle — top left */
+section::before {
+  width: 420px;
+  height: 420px;
+  background: royalblue;
+  top: -120px;
+  left: -140px;
+}
+
+/* Large circle — bottom right */
+section::after {
+  width: 340px;
+  height: 340px;
+  background: royalblue;
+  bottom: -100px;
+  right: -110px;
+}
+
+/* Keep all direct children above the decorative circles */
+section > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Small accent dots ──────────────────────────────────── */
+.about-decor-left,
+.about-decor-right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.about-decor-left { left: 1.5rem; }
+.about-decor-right { right: 1.5rem; }
+
+.about-decor-left span,
+.about-decor-right span {
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: royalblue;
+  opacity: 0.18;
+}
+
+.about-decor-left span:nth-child(2),
+.about-decor-right span:nth-child(2) { opacity: 0.12; }
+.about-decor-left span:nth-child(3),
+.about-decor-right span:nth-child(3) { opacity: 0.07; }
+
+@media (max-width: 768px) {
+  .about-decor-left,
+  .about-decor-right { display: none; }
+}
+
+/* ── Headings ───────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6,
+.display-5 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+/* ── Section title (DOST S.T.I.I) ──────────────────────── */
+section h2.display-5 {
+  font-size: 2.4rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #1a1a2e;
+}
+
+/* ── Vision / Mission labels ────────────────────────────── */
+section .lead.fs-4 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.05rem !important;
+  line-height: 1.8;
+  color: #444;
+}
+
+/* Make V/M labels stand out */
+section .lead.fs-4:nth-of-type(odd) {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 1.15rem !important;
+  color: royalblue;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem !important;
+}
+
+/* ── Body paragraph (about wrapper) ────────────────────── */
+.about-wrapper .lead {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.85;
+}
+
+/* ── Stat cards ─────────────────────────────────────────── */
+.about-wrapper .row.gy-4 {
+  align-items: stretch;
+}
+
+.about-wrapper .card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card .display-5 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.card p.fw-bold {
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #555;
+}
+
+/* ── Vision card ───────────────────────────────────────── */
+.vision-card {
+  margin-bottom: 2rem;
+}
+
+.vision-card p {
+  margin-bottom: 0;
+  padding: 1.5rem 1.25rem;
+  background: #f8f9ff;
+  border-radius: 10px;
+  border-top: 3px solid royalblue;
+  font-family: "Inter", sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 0.95rem !important;
+  line-height: 1.75 !important;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+  color: #444 !important;
+  text-align: left !important;
+}
+
+/* ── Mission columns ───────────────────────────────────── */
+.mission-cols {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.mission-cols p {
+  flex: 1;
+  margin-bottom: 0;
+  padding: 1.5rem 1.25rem;
+  background: #f8f9ff;
+  border-radius: 10px;
+  border-top: 3px solid royalblue;
+  font-family: "Inter", sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 0.95rem !important;
+  line-height: 1.75 !important;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+  color: #444 !important;
+  text-align: left !important;
+}
+
+@media (max-width: 768px) {
+  .mission-cols {
+    flex-direction: column;
+  }
+}
+
+/* ── Legacy classes ─────────────────────────────────────── */
+.newspaper {
+  column-count: 4;
+}
+
+.bout {
+  color: rgb(12, 12, 153);
+}

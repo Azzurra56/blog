@@ -1,0 +1,231 @@
+---
+// Welcome to Astro! Everything between these triple-dash code fences
+// is your "component frontmatter". It never runs in the browser.
+console.log('This runs in your terminal, not the browser!');
+
+import '../styles/global.css';
+import '../styles/Image.css';
+import Header from '../components/Header.astro';
+import img5070 from '../assets/5070.jpg';
+import img3080 from '../assets/3080.png';
+import img3070 from '../assets/3070.jpg';
+import img3060 from '../assets/3060.png';
+import img3050 from '../assets/3050.jpg';
+import img5060 from '../assets/5060.jpg';
+
+---
+<!-- Below is your "component template." It's just HTML, but with
+    some magic sprinkled in to help you build great templates. -->
+
+<html>
+<head>
+  <link rel="icon" type="image/png" href="/STII.png" />
+</head>
+  <body>
+  <Header />
+  <div class="page-wrapper">
+    <div class="page-decor-left"><span></span><span></span><span></span></div>
+    <div class="page-decor-right"><span></span><span></span><span></span></div>
+
+    <h1>Dost STII Hardware For Computer parts</h1>
+
+    <h2 class="picture">GPU</h2>   
+    
+    <button class="btn" id="collapse-btn" onclick="toggleGallery()" aria-label="Toggle GPU Gallery" aria-expanded="true">
+      <span class="arrow-icon" aria-hidden="true">&#9654;</span>
+    </button>
+  
+
+<div class="gallery" role="grid" aria-label="GPU Gallery">
+  <div class="gallery-item" role="gridcell" tabindex="0" aria-label="View RTX 5070 details">
+    <img src={img5070.src} alt="NVIDIA GeForce RTX 5070 Graphics Card" width="600" height="400" loading="lazy" data-img={img5070.src} data-desc="RTX 5070" data-index="0" onclick="showModal(this)" />
+    <div class="desc">RTX 5070</div>
+  </div>
+  <div class="gallery-item" role="gridcell" tabindex="0" aria-label="View RTX 3080 details">
+    <img src={img3080.src} alt="NVIDIA GeForce RTX 3080 Graphics Card" width="600" height="400" loading="lazy" data-img={img3080.src} data-desc="RTX 3080" data-index="1" onclick="showModal(this)" />
+    <div class="desc">RTX 3080</div>
+  </div>
+  <div class="gallery-item" role="gridcell" tabindex="0" aria-label="View RTX 3070 details">
+    <img src={img3070.src} alt="NVIDIA GeForce RTX 3070 Graphics Card" width="600" height="400" loading="lazy" data-img={img3070.src} data-desc="RTX 3070" data-index="2" onclick="showModal(this)" />
+    <div class="desc">RTX 3070</div>
+  </div>
+  <div class="gallery-item" role="gridcell" tabindex="0" aria-label="View RTX 3060 details">
+    <img src={img3060.src} alt="NVIDIA GeForce RTX 3060 Graphics Card" width="600" height="400" loading="lazy" data-img={img3060.src} data-desc="RTX 3060" data-index="3" onclick="showModal(this)" />
+    <div class="desc">RTX 3060</div>
+  </div>
+  <div class="gallery-item" role="gridcell" tabindex="0" aria-label="View RTX 3050 details">
+    <img src={img3050.src} alt="NVIDIA GeForce RTX 3050 Graphics Card" width="600" height="400" loading="lazy" data-img={img3050.src} data-desc="RTX 3050" data-index="4" onclick="showModal(this)" />
+    <div class="desc">RTX 3050</div>
+  </div>
+  <div class="gallery-item" role="gridcell" tabindex="0" aria-label="View RTX 5060 details">
+    <img src={img5060.src} alt="NVIDIA GeForce RTX 5060 Graphics Card" width="600" height="400" loading="lazy" data-img={img5060.src} data-desc="RTX 5060" data-index="5" onclick="showModal(this)" />
+    <div class="desc">RTX 5060</div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div id="modal" class="modal" role="dialog" aria-hidden="true" aria-labelledby="modal-desc" aria-modal="true">
+  <span onclick="closeModal()" class="close" aria-label="Close modal">&times;</span>
+  <span class="modal-nav modal-prev" onclick="previousImage()" aria-label="Previous image">&#8249;</span>
+  <span class="modal-nav modal-next" onclick="nextImage()" aria-label="Next image">&#8250;</span>
+  <img id="modal-img" alt="" />
+  <div id="modal-desc"></div>
+</div>
+
+<script src="/AstroJs/Hover.js" is:inline></script>
+<script is:inline>
+  let currentModalIndex = 0;
+  const galleryImages = [];
+  
+  // Initialize gallery data
+  function initGallery() {
+    const items = document.querySelectorAll('.gallery-item img');
+    items.forEach((img, index) => {
+      galleryImages.push({
+        src: img.dataset.img,
+        desc: img.dataset.desc,
+        alt: img.alt
+      });
+    });
+  }
+  
+  function toggleGallery() {
+    const gallery = document.querySelector('.gallery');
+    const btn = document.getElementById('collapse-btn');
+    const arrow = btn.querySelector('.arrow-icon');
+    const isHidden = gallery.style.display === 'none';
+    
+    if (isHidden) {
+      gallery.style.display = 'grid';
+      btn.classList.remove('open');
+      btn.classList.add('close');
+      btn.setAttribute('aria-expanded', 'true');
+      arrow.style.transform = 'rotate(0deg)';
+    } else {
+      gallery.style.display = 'none';
+      btn.classList.remove('close');
+      btn.classList.add('open');
+      btn.setAttribute('aria-expanded', 'false');
+      arrow.style.transform = 'rotate(90deg)';
+    }
+  }
+  
+  function showModal(img) {
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modal-img');
+    const modalDesc = document.getElementById('modal-desc');
+    
+    currentModalIndex = parseInt(img.dataset.index);
+    
+    modalImg.src = img.dataset.img;
+    modalImg.alt = img.alt;
+    modalDesc.textContent = img.dataset.desc;
+    
+    modal.style.display = 'block';
+    modal.setAttribute('aria-hidden', 'false');
+    modal.focus();
+    
+    // Prevent body scrolling
+    document.body.style.overflow = 'hidden';
+  }
+  
+  function closeModal() {
+    const modal = document.getElementById('modal');
+    modal.style.display = 'none';
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = 'auto';
+  }
+  
+  function nextImage() {
+    currentModalIndex = (currentModalIndex + 1) % galleryImages.length;
+    updateModalImage();
+  }
+  
+  function previousImage() {
+    currentModalIndex = (currentModalIndex - 1 + galleryImages.length) % galleryImages.length;
+    updateModalImage();
+  }
+  
+  function updateModalImage() {
+    const modalImg = document.getElementById('modal-img');
+    const modalDesc = document.getElementById('modal-desc');
+    const currentImage = galleryImages[currentModalIndex];
+    
+    modalImg.src = currentImage.src;
+    modalImg.alt = currentImage.alt;
+    modalDesc.textContent = currentImage.desc;
+  }
+
+  // Keyboard navigation and event listeners
+  document.addEventListener('DOMContentLoaded', function() {
+    initGallery();
+    
+    const modal = document.getElementById('modal');
+    
+    // Modal background click to close
+    if (modal) {
+      modal.addEventListener('click', function(event) {
+        if (event.target === modal) {
+          closeModal();
+        }
+      });
+    }
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', function(event) {
+      if (modal.style.display === 'block') {
+        switch(event.key) {
+          case 'Escape':
+            closeModal();
+            break;
+          case 'ArrowLeft':
+            previousImage();
+            break;
+          case 'ArrowRight':
+            nextImage();
+            break;
+        }
+      }
+    });
+    
+    // Gallery item keyboard navigation
+    document.querySelectorAll('.gallery-item').forEach(item => {
+      item.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          const img = this.querySelector('img');
+          showModal(img);
+        }
+      });
+    });
+    
+    // Touch/swipe support for mobile modal navigation
+    let touchStartX = null;
+    
+    modal.addEventListener('touchstart', function(e) {
+      touchStartX = e.touches[0].clientX;
+    });
+    
+    modal.addEventListener('touchend', function(e) {
+      if (touchStartX === null) return;
+      
+      const touchEndX = e.changedTouches[0].clientX;
+      const diff = touchStartX - touchEndX;
+      
+      if (Math.abs(diff) > 50) { // Minimum swipe distance
+        if (diff > 0) {
+          nextImage(); // Swipe left = next
+        } else {
+          previousImage(); // Swipe right = previous
+        }
+      }
+      
+      touchStartX = null;
+    });
+  });
+</script>
+
+  </div> <!-- end page-wrapper -->
+  </body>
+  
+</html>

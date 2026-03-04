@@ -1,0 +1,58 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import '../styles/ram.css';
+import img8gb from "../assets/8gb.jpg";
+import img16gb from "../assets/16gb.jpg";
+---
+
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RAM | S.T.I.I</title>
+</head>
+  <body>
+  <Header />
+
+<h1 class="rams"> Ram Available in S.T.I.I </h1>
+
+<h2 class="rampic">Ram Collection</h2>
+
+
+<div class="RamGall">
+  <div class="gallery-item">
+    <div class="card">
+      <img src={img8gb.src} class="card-img-top" alt="DDR4 8GB RAM 2400MT" width="600" height="400" data-img={img8gb.src} data-desc="DDR4 8GB RAM 2400MT" onclick="showModal(this)" />
+      <div class="card-body">
+        <h5 class="card-title">8GB RAM</h5>
+        <p class="card-text">DDR4 8GB RAM 2400MT</p>
+        <a href="#" class="btn btn-primary" data-img={img8gb.src} data-desc="DDR4 8GB RAM 4800MT" onclick="showModal(this)">View</a>
+      </div>
+    </div>
+  </div>
+  <div class="gallery-item">
+    <div class="card">
+      <img src={img16gb.src} class="card-img-top" alt="DDR5 16GB RAM 4800MT" width="600" height="400" data-img={img16gb.src} data-desc="DDR5 16GB RAM 4800MT" onclick="showModal(this)" />
+      <div class="card-body">
+        <h5 class="card-title">16GB RAM</h5>
+        <p class="card-text">DDR5 16GB RAM 4800MT</p>
+        <a href="#" class="btn btn-primary" data-img={img16gb.src} data-desc="DDR5 16GB RAM 4800MT" onclick="showModal(this)">View</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal for Ram Page -->
+
+<div id="modal" class="modal">
+  <span onclick="closeModal()" class="close">&times;</span>
+  <img id="modal-img" alt="" />
+  <div id="modal-desc"></div>
+</div>
+
+<script src="/AstroJs/Hover.js" is:inline></script>
+
+  </body>
+  
+</html>
