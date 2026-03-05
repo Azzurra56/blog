@@ -1,6 +1,6 @@
 /* Contact page layout and royal-blue theme */
 .contact-section {
-	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+	font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 .contact-container {
 	display: flex;
@@ -11,7 +11,7 @@
 	width: 34%;
 	padding: 60px 40px;
 	box-sizing: border-box;
-	background: #4169e1; /* royalblue */
+	background: #1647d8; /* royalblue */
 	color: #fff;
 }
 .contact-left h2 {
