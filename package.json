@@ -1,7 +1,7 @@
 {
   "name": "blog",
   "version": "1.0.0",
-  "description": "",
+  "description": "Astro-powered DOST–STII tech resource blog with hardware references and troubleshooting guides.",
   "main": "index.js",
   "scripts": {
     "dev": "astro dev",
