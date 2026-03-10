@@ -9,6 +9,8 @@
 
 A modern Astro-powered technical resource hub for DOST–STII featuring GPU and RAM references, hardware troubleshooting guides, and system specification recommendations.
 
+**Maintained by Azzurra56 · IT Support Intern**
+
 *By 2040, we are the lead agency in Science, Technology and Innovation Information.*
 
 [![Built with Astro](https://img.shields.io/badge/Built%20with-Astro-FF5D01?logo=astro&logoColor=white)](https://astro.build)
