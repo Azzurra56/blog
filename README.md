@@ -228,6 +228,8 @@ and this permission notice appear in all copies.
 
 See the [ISC License details](https://opensource.org/licenses/ISC) for more information.
 
+> ⚠️ **Warning:** This repository is intended for DOST-STII internal use only. Unauthorized use by non-DOST-STII personnel may result in administrative or legal consequences.
+
 ---
 
 ## 📬 Contact
