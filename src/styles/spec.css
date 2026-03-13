@@ -17,7 +17,7 @@ h2{
 .specs-row{
     display: flex;
     flex-wrap: wrap;
-    gap: 1.5rem;
+    gap: 3.5rem;
     justify-content: flex-start;
 }
 
@@ -26,7 +26,7 @@ h2{
 .specs-gallery-flex{
 
     display: flex;
-    gap: 2rem;
+    gap: 3rem;
     flex-direction: column;
     align-items: flex-start;
 }
