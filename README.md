@@ -75,12 +75,11 @@ The platform is designed to support STII's mandate of providing accessible, reli
 | Technology | Version | Role |
 |---|---|---|
 | [Astro](https://astro.build) | `^5.18.0` | Core framework – static site generation |
-| CSS3 | — | Scoped component and global styles |
+| [Tailwind CSS](https://tailwindcss.com) | `^4.2.2` | Utility-first CSS framework for styling |
 | JavaScript (ES2022) | — | Interactive UI (galleries, modals, navigation) |
 | [Bootstrap Icons](https://icons.getbootstrap.com) | CDN | Navigation and UI icons |
-| [Bootstrap](https://getbootstrap.com) | CDN | Supplementary layout utilities |
 
-> **Language composition:** Astro 51.8% · CSS 46.5% · JavaScript 1.7%
+> **Language composition:** Astro 70% · JavaScript 20% · CSS 10%
 
 ---
 
@@ -101,6 +100,7 @@ blog/
 │   │   ├── 3080.png
 │   │   ├── 5060.jpg
 │   │   ├── 5070.jpg
+│   │   ├── 5070ti.jpg
 │   │   ├── 16gb.jpg
 │   │   ├── 8gb.jpg
 │   │   └── ram.png
@@ -117,14 +117,8 @@ blog/
 │   │   ├── Beep.astro        # Beep code reference
 │   │   ├── contact.astro     # Contact information
 │   │   └── about.astro       # About DOST–STII
-│   ├── styles/               # Page-scoped and global CSS
-│   │   ├── global.css
-│   │   ├── Image.css
-│   │   ├── about.css
-│   │   ├── beep.css
-│   │   ├── contact.css
-│   │   ├── issue.css
-│   │   └── ram.css
+│   ├── styles/               # Global CSS (Tailwind entry point)
+│   │   └── global.css
 │   └── env.d.ts              # TypeScript environment types
 ├── astro.config.mjs          # Astro configuration
 ├── tsconfig.json             # TypeScript configuration
