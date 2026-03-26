@@ -1,7 +1,5 @@
 ---
 import Header from '../components/Header.astro';
-import '../styles/global.css';
-import '../styles/issue.css';
 import issues from '../data/issues.json';
 const issuesJson = JSON.stringify(issues).replace(/</g, '\\u003c');
 ---
@@ -9,12 +7,13 @@ const issuesJson = JSON.stringify(issues).replace(/</g, '\\u003c');
 <html>
 <head>
 </head>
-  <body>
+  <body class="min-h-screen bg-slate-100 text-slate-900">
   <Header />
-  <div class="filter-row">
-    <label for="productFilter" class="filter-label">Filter by product</label>
-    <div class="select-wrap">
-      <select id="productFilter" aria-label="Filter issues by product">
+  <div class="mx-auto max-w-7xl px-4 py-6 md:px-8">
+    <div class="mb-4 flex flex-col gap-3 sm:flex-row sm:items-center">
+      <label for="productFilter" class="text-xs font-bold uppercase tracking-wider text-slate-700">Filter by product</label>
+      <div class="relative inline-block max-w-xs">
+        <select id="productFilter" aria-label="Filter issues by product" class="w-full rounded-xl border border-slate-300 bg-white px-4 py-2 pr-10 text-sm outline-none ring-blue-300 focus:ring">
         <option value="">All Products</option>
         {
           Array.from(new Set(issues.map(item => item.product))).map(product => (
@@ -22,27 +21,27 @@ const issuesJson = JSON.stringify(issues).replace(/</g, '\\u003c');
           ))
         }
       </select>
+      </div>
     </div>
-  </div>
-  <div class="table-wrapper">
-    <table id="issuesTable" class="fl-table">
+  <div class="overflow-x-auto rounded-xl bg-white shadow-lg">
+    <table id="issuesTable" class="min-w-full border-collapse text-left text-sm">
       <thead>
-        <tr>
-          <th>Product Name</th>
-          <th>Known Issues</th>
-          <th>Solution</th>
-          <th>Sources</th>
+        <tr class="bg-slate-800 text-white">
+          <th class="px-4 py-3">Product Name</th>
+          <th class="px-4 py-3">Known Issues</th>
+          <th class="px-4 py-3">Solution</th>
+          <th class="px-4 py-3">Sources</th>
         </tr>
       </thead>
       <tbody>
         <!-- Server-rendered rows for no-JS and initial view -->
         {
           issues.map(item => (
-            <tr>
-              <td>{item.product}</td>
-              <td>{item.issue}</td>
-              <td>{item.solution}</td>
-              <td><a href={item.source} target="_blank">View Discussion</a></td>
+            <tr class="odd:bg-white even:bg-slate-50">
+              <td class="px-4 py-3">{item.product}</td>
+              <td class="px-4 py-3">{item.issue}</td>
+              <td class="px-4 py-3">{item.solution}</td>
+              <td class="px-4 py-3"><a href={item.source} target="_blank" class="font-semibold text-blue-700 hover:text-blue-900">View Discussion</a></td>
             </tr>
           ))
         }
@@ -115,17 +114,18 @@ const issuesJson = JSON.stringify(issues).replace(/</g, '\\u003c');
       console.log('filtered products:', filtered.map(i => i.product));
       if (filtered.length === 0) {
         const row = document.createElement('tr');
-        row.innerHTML = `<td colspan='4' style='text-align:center;'>No issues found for this product.</td>`;
+        row.innerHTML = `<td colspan='4' class='px-4 py-6 text-center'>No issues found for this product.</td>`;
         tbody.appendChild(row);
         return;
       }
       filtered.forEach(item => {
         const row = document.createElement('tr');
+        row.className = 'odd:bg-white even:bg-slate-50';
         row.innerHTML = `
-          <td>${item.product}</td>
-          <td>${item.issue}</td>
-          <td>${item.solution}</td>
-          <td><a href="${item.source}" target="_blank">View Discussion</a></td>
+          <td class="px-4 py-3">${item.product}</td>
+          <td class="px-4 py-3">${item.issue}</td>
+          <td class="px-4 py-3">${item.solution}</td>
+          <td class="px-4 py-3"><a href="${item.source}" target="_blank" class="font-semibold text-blue-700 hover:text-blue-900">View Discussion</a></td>
         `;
         tbody.appendChild(row);
       });

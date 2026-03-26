@@ -1,0 +1,107 @@
+<!DOCTYPE html><html> <head><link rel="stylesheet" href="/_astro/Beep.CVB7Vmxm.css"></head> <body class="min-h-screen bg-slate-100 text-slate-900"> <header class="site-header sticky top-0 z-50 border-b border-blue-700/50 bg-blue-700 text-white shadow-lg shadow-blue-900/30"> <div class="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-3 md:px-6"> <h2 class="text-xl font-bold tracking-wide">DOST STII</h2> <button id="nav-button" type="button" aria-label="Toggle navigation" class="inline-flex items-center rounded-md border border-white/40 p-2 md:hidden"> <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path> </svg> </button> <ul id="topnav" class="hidden items-center gap-2 md:flex"> <li><a href="/" class="rounded-md px-3 py-2 text-sm font-medium hover:bg-white/20">Home</a></li> <li><a href="/ram" class="rounded-md px-3 py-2 text-sm font-medium hover:bg-white/20">RAM</a></li> <li><a href="/" class="rounded-md px-3 py-2 text-sm font-medium hover:bg-white/20">GPU</a></li> <li><a href="/" class="rounded-md px-3 py-2 text-sm font-medium hover:bg-white/20">CPU</a></li> <li><a href="/issues" class="rounded-md px-3 py-2 text-sm font-medium hover:bg-white/20">Known Issues</a></li> <li><a href="/contact" class="rounded-md px-3 py-2 text-sm font-medium hover:bg-white/20">Contact</a></li> <li><a href="/about" class="rounded-md px-3 py-2 text-sm font-medium hover:bg-white/20">About</a></li> <li><a href="/spec" class="rounded-md px-3 py-2 text-sm font-medium hover:bg-white/20">Specs and Combo</a></li> <li><a href="/Beep" class="rounded-md px-3 py-2 text-sm font-medium hover:bg-white/20">MotherBoard Beep Code</a></li> </ul> </div> <ul id="mobile-nav" class="hidden space-y-1 border-t border-white/20 px-4 py-3 md:hidden"> <li><a href="/" class="block rounded-md px-3 py-2 text-sm font-medium hover:bg-white/20">Home</a></li> <li><a href="/ram" class="block rounded-md px-3 py-2 text-sm font-medium hover:bg-white/20">RAM</a></li> <li><a href="/" class="block rounded-md px-3 py-2 text-sm font-medium hover:bg-white/20">GPU</a></li> <li><a href="/" class="block rounded-md px-3 py-2 text-sm font-medium hover:bg-white/20">CPU</a></li> <li><a href="/issues" class="block rounded-md px-3 py-2 text-sm font-medium hover:bg-white/20">Known Issues</a></li> <li><a href="/contact" class="block rounded-md px-3 py-2 text-sm font-medium hover:bg-white/20">Contact</a></li> <li><a href="/about" class="block rounded-md px-3 py-2 text-sm font-medium hover:bg-white/20">About</a></li> <li><a href="/spec" class="block rounded-md px-3 py-2 text-sm font-medium hover:bg-white/20">Specs and Combo</a></li> <li><a href="/Beep" class="block rounded-md px-3 py-2 text-sm font-medium hover:bg-white/20">MotherBoard Beep Code</a></li> </ul> </header> <script>
+  const navButton = document.getElementById('nav-button');
+  const mobileNav = document.getElementById('mobile-nav');
+  const header = document.querySelector('.site-header');
+
+  if (navButton && mobileNav) {
+    navButton.addEventListener('click', function() {
+      mobileNav.classList.toggle('hidden');
+    });
+
+    mobileNav.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        mobileNav.classList.add('hidden');
+      });
+    });
+
+    document.addEventListener('click', function(e) {
+      if (!header.contains(e.target)) {
+        mobileNav.classList.add('hidden');
+      }
+    });
+  }
+</script> <div class="mx-auto max-w-7xl px-4 py-6 md:px-8"> <div class="mb-4 flex flex-col gap-3 sm:flex-row sm:items-center"> <label for="productFilter" class="text-xs font-bold uppercase tracking-wider text-slate-700">Filter by product</label> <div class="relative inline-block max-w-xs"> <select id="productFilter" aria-label="Filter issues by product" class="w-full rounded-xl border border-slate-300 bg-white px-4 py-2 pr-10 text-sm outline-none ring-blue-300 focus:ring"> <option value="">All Products</option> <option value="rtx 5070 ti">RTX 5070 Ti</option><option value="rtx 5070">RTX 5070</option><option value="rtx 3080">RTX 3080</option><option value="rtx 3090">RTX 3090</option><option value="rtx 3060">RTX 3060</option><option value="rtx 3050">RTX 3050</option> </select> </div> </div> <div class="overflow-x-auto rounded-xl bg-white shadow-lg"> <table id="issuesTable" class="min-w-full border-collapse text-left text-sm"> <thead> <tr class="bg-slate-800 text-white"> <th class="px-4 py-3">Product Name</th> <th class="px-4 py-3">Known Issues</th> <th class="px-4 py-3">Solution</th> <th class="px-4 py-3">Sources</th> </tr> </thead> <tbody> <!-- Server-rendered rows for no-JS and initial view --> <tr class="odd:bg-white even:bg-slate-50"> <td class="px-4 py-3">RTX 5070 Ti</td> <td class="px-4 py-3">Stats screen flickering (7inch display)</td> <td class="px-4 py-3">Update GPU drivers and monitor firmware</td> <td class="px-4 py-3"><a href="https://www.nvidia.com/en-us/geforce/forums/geforce-graphics-cards/5/582390/rtx-5070-ti-and-7inch-stats-screen/" target="_blank" class="font-semibold text-blue-700 hover:text-blue-900">View Discussion</a></td> </tr><tr class="odd:bg-white even:bg-slate-50"> <td class="px-4 py-3">RTX 5070</td> <td class="px-4 py-3">Black screen and reboots after installation</td> <td class="px-4 py-3">Uninstall old drivers first, use DDU (Display Driver Uninstaller)</td> <td class="px-4 py-3"><a href="https://example.com/forum/..." target="_blank" class="font-semibold text-blue-700 hover:text-blue-900">View Discussion</a></td> </tr><tr class="odd:bg-white even:bg-slate-50"> <td class="px-4 py-3">RTX 5070</td> <td class="px-4 py-3">RTX 5070 Graphic and performance issues.</td> <td class="px-4 py-3">Uninstall old drivers first, use DDU (Display Driver Uninstaller)</td> <td class="px-4 py-3"><a href="https://community.thefunpimps.com/threads/rtx-5070-graphic-and-performance-issues.42783/" target="_blank" class="font-semibold text-blue-700 hover:text-blue-900">View Discussion</a></td> </tr><tr class="odd:bg-white even:bg-slate-50"> <td class="px-4 py-3">RTX 3080</td> <td class="px-4 py-3">3080 issue after update to new drivers</td> <td class="px-4 py-3">None as of yet</td> <td class="px-4 py-3"><a href="https://www.nvidia.com/en-us/geforce/forums/game-ready-drivers/13/528575/3080-issue-after-update-to-new-drivers/" target="_blank" class="font-semibold text-blue-700 hover:text-blue-900">View Discussion</a></td> </tr><tr class="odd:bg-white even:bg-slate-50"> <td class="px-4 py-3">RTX 3090</td> <td class="px-4 py-3">RTX 3090 Keeps Crashing</td> <td class="px-4 py-3">None as of yet</td> <td class="px-4 py-3"><a href="https://www.nvidia.com/en-us/geforce/forums/geforce-graphics-cards/5/408137/rtx-3090-keeps-crashing/" target="_blank" class="font-semibold text-blue-700 hover:text-blue-900">View Discussion</a></td> </tr><tr class="odd:bg-white even:bg-slate-50"> <td class="px-4 py-3">RTX 3060</td> <td class="px-4 py-3">RTX 3060 Keeps Crashing</td> <td class="px-4 py-3">None as of yet</td> <td class="px-4 py-3"><a href="https://www.nvidia.com/en-us/geforce/forums/geforce-graphics-cards/5/408137/rtx-3090-keeps-crashing/" target="_blank" class="font-semibold text-blue-700 hover:text-blue-900">View Discussion</a></td> </tr><tr class="odd:bg-white even:bg-slate-50"> <td class="px-4 py-3">RTX 3050</td> <td class="px-4 py-3">RTX 3050 Freezing issue</td> <td class="px-4 py-3">https://www.nvidia.com/en-us/geforce/news/dune-spice-wars-game-ready-driver</td> <td class="px-4 py-3"><a href="https://www.nvidia.com/en-us/geforce/forums/geforce-graphics-cards/5/486962/rtx-3050-freezing-issue/" target="_blank" class="font-semibold text-blue-700 hover:text-blue-900">View Discussion</a></td> </tr> </tbody> </table> </div> <script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function() {
+    let issues = [];
+    (function() {
+      const el = document.getElementById('astro-issues-data');
+      const raw = el ? (el.getAttribute && el.getAttribute('data-json') || el.textContent || el.innerText || '') : '';
+      function tryParse(s) {
+        if (!s) return null;
+        try {
+          return JSON.parse(s);
+        } catch (e) {
+          return null;
+        }
+      }
+      // 1) try direct parse
+      issues = tryParse(raw) || [];
+      if (!issues.length) {
+        // 2) try to extract a JSON substring starting at first '[' or '{' and ending at matching bracket
+        const startIdx = Math.max(raw.indexOf('['), raw.indexOf('{'));
+        if (startIdx >= 0) {
+          const openChar = raw[startIdx];
+          const closeChar = openChar === '[' ? ']' : '}';
+          let depth = 0;
+          let endIdx = -1;
+          for (let i = startIdx; i < raw.length; i++) {
+            const ch = raw[i];
+            if (ch === openChar) depth++;
+            else if (ch === closeChar) depth--;
+            if (depth === 0) { endIdx = i; break; }
+          }
+          if (endIdx > startIdx) {
+            const substr = raw.slice(startIdx, endIdx + 1);
+            const parsed = tryParse(substr);
+            if (parsed) issues = parsed;
+          }
+        }
+      }
+      if (!issues || issues.length === 0) {
+        try {
+          issues = JSON.parse('[]');
+        } catch (e) {
+          issues = [];
+        }
+      }
+      if (!issues || !issues.length) {
+        console.warn('issues data is empty after parsing. Raw data logged below for inspection.');
+        console.log('Raw issues data (first 200 chars):', raw && raw.slice ? raw.slice(0,200) : raw);
+      }
+    })();
+    const table = document.getElementById('issuesTable');
+    const tbody = table ? table.querySelector('tbody') : null;
+    const productFilter = document.getElementById('productFilter');
+    function renderRows(filter = '') {
+      if (!tbody) return;
+      console.log('renderRows called with filter:', filter);
+      while (tbody.firstChild) tbody.removeChild(tbody.firstChild);
+      const f = (filter || '').toString().trim().toLowerCase();
+      const filtered = issues.filter(item => {
+        if (!f) return true;
+        const p = (item.product || '').toString().toLowerCase().trim();
+        return p === f;
+      });
+      console.log('filtered products:', filtered.map(i => i.product));
+      if (filtered.length === 0) {
+        const row = document.createElement('tr');
+        row.innerHTML = `<td colspan='4' class='px-4 py-6 text-center'>No issues found for this product.</td>`;
+        tbody.appendChild(row);
+        return;
+      }
+      filtered.forEach(item => {
+        const row = document.createElement('tr');
+        row.className = 'odd:bg-white even:bg-slate-50';
+        row.innerHTML = `
+          <td class="px-4 py-3">${item.product}</td>
+          <td class="px-4 py-3">${item.issue}</td>
+          <td class="px-4 py-3">${item.solution}</td>
+          <td class="px-4 py-3"><a href="${item.source}" target="_blank" class="font-semibold text-blue-700 hover:text-blue-900">View Discussion</a></td>
+        `;
+        tbody.appendChild(row);
+      });
+    }
+    renderRows();
+    productFilter.addEventListener('change', e => renderRows(e.target.value));
+  });
+</script> <script type="application/json" id="astro-issues-data" data-json="[{&#34;product&#34;:&#34;RTX 5070 Ti&#34;,&#34;issue&#34;:&#34;Stats screen flickering (7inch display)&#34;,&#34;solution&#34;:&#34;Update GPU drivers and monitor firmware&#34;,&#34;source&#34;:&#34;https://www.nvidia.com/en-us/geforce/forums/geforce-graphics-cards/5/582390/rtx-5070-ti-and-7inch-stats-screen/&#34;},{&#34;product&#34;:&#34;RTX 5070&#34;,&#34;issue&#34;:&#34;Black screen and reboots after installation&#34;,&#34;solution&#34;:&#34;Uninstall old drivers first, use DDU (Display Driver Uninstaller)&#34;,&#34;source&#34;:&#34;https://example.com/forum/...&#34;},{&#34;product&#34;:&#34;RTX 5070&#34;,&#34;issue&#34;:&#34;RTX 5070 Graphic and performance issues.&#34;,&#34;solution&#34;:&#34;Uninstall old drivers first, use DDU (Display Driver Uninstaller)&#34;,&#34;source&#34;:&#34;https://community.thefunpimps.com/threads/rtx-5070-graphic-and-performance-issues.42783/&#34;},{&#34;product&#34;:&#34;RTX 3080&#34;,&#34;issue&#34;:&#34;3080 issue after update to new drivers&#34;,&#34;solution&#34;:&#34;None as of yet&#34;,&#34;source&#34;:&#34;https://www.nvidia.com/en-us/geforce/forums/game-ready-drivers/13/528575/3080-issue-after-update-to-new-drivers/&#34;},{&#34;product&#34;:&#34;RTX 3090&#34;,&#34;issue&#34;:&#34;RTX 3090 Keeps Crashing&#34;,&#34;solution&#34;:&#34;None as of yet&#34;,&#34;source&#34;:&#34;https://www.nvidia.com/en-us/geforce/forums/geforce-graphics-cards/5/408137/rtx-3090-keeps-crashing/&#34;},{&#34;product&#34;:&#34;RTX 3060&#34;,&#34;issue&#34;:&#34;RTX 3060 Keeps Crashing&#34;,&#34;solution&#34;:&#34;None as of yet&#34;,&#34;source&#34;:&#34;https://www.nvidia.com/en-us/geforce/forums/geforce-graphics-cards/5/408137/rtx-3090-keeps-crashing/&#34;},{&#34;product&#34;:&#34;RTX 3050&#34;,&#34;issue&#34;:&#34;RTX 3050 Freezing issue&#34;,&#34;solution&#34;:&#34;https://www.nvidia.com/en-us/geforce/news/dune-spice-wars-game-ready-driver&#34;,&#34;source&#34;:&#34;https://www.nvidia.com/en-us/geforce/forums/geforce-graphics-cards/5/486962/rtx-3050-freezing-issue/&#34;}]"></script> </div> </body></html>

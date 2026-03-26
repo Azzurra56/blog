@@ -1,7 +1,5 @@
 ---
-import '../styles/global.css';
 import Header from '../components/Header.astro';
-import '../styles/ram.css';
 import img8gb from "../assets/8gb.jpg";
 import img16gb from "../assets/16gb.jpg";
 ---
@@ -12,32 +10,33 @@ import img16gb from "../assets/16gb.jpg";
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RAM | S.T.I.I</title>
 </head>
-  <body>
+  <body class="min-h-screen bg-slate-100 text-slate-900">
   <Header />
 
-<h1 class="rams"> Ram Available in S.T.I.I </h1>
+<main class="mx-auto max-w-6xl px-4 py-8 md:px-8">
+<h1 class="rams text-3xl font-extrabold tracking-tight text-slate-900">Ram Available in S.T.I.I</h1>
 
-<h2 class="rampic">Ram Collection</h2>
+<h2 class="rampic mt-2 text-xl font-bold text-blue-700">Ram Collection</h2>
 
 
-<div class="RamGall">
-  <div class="gallery-item">
+<div class="RamGall mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2">
+  <div class="gallery-item overflow-hidden rounded-xl bg-white shadow transition hover:-translate-y-1 hover:shadow-xl">
     <div class="card">
-      <img src={img8gb.src} class="card-img-top" alt="DDR4 8GB RAM 2400MT" width="600" height="400" data-img={img8gb.src} data-desc="DDR4 8GB RAM 2400MT" onclick="showModal(this)" />
-      <div class="card-body">
-        <h5 class="card-title">8GB RAM</h5>
-        <p class="card-text">DDR4 8GB RAM 2400MT</p>
-        <a href="#" class="btn btn-primary" data-img={img8gb.src} data-desc="DDR4 8GB RAM 4800MT" onclick="showModal(this)">View</a>
+      <img src={img8gb.src} class="card-img-top h-48 w-full cursor-pointer object-cover" alt="DDR4 8GB RAM 2400MT" width="600" height="400" data-img={img8gb.src} data-desc="DDR4 8GB RAM 2400MT" onclick="showModal(this)" />
+      <div class="card-body p-4 text-center">
+        <h5 class="card-title text-lg font-bold">8GB RAM</h5>
+        <p class="card-text mb-3 text-sm text-slate-600">DDR4 8GB RAM 2400MT</p>
+        <a href="#" class="btn btn-primary inline-flex rounded-md bg-blue-700 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-800" data-img={img8gb.src} data-desc="DDR4 8GB RAM 4800MT" onclick="showModal(this)">View</a>
       </div>
     </div>
   </div>
-  <div class="gallery-item">
+  <div class="gallery-item overflow-hidden rounded-xl bg-white shadow transition hover:-translate-y-1 hover:shadow-xl">
     <div class="card">
-      <img src={img16gb.src} class="card-img-top" alt="DDR5 16GB RAM 4800MT" width="600" height="400" data-img={img16gb.src} data-desc="DDR5 16GB RAM 4800MT" onclick="showModal(this)" />
-      <div class="card-body">
-        <h5 class="card-title">16GB RAM</h5>
-        <p class="card-text">DDR5 16GB RAM 4800MT</p>
-        <a href="#" class="btn btn-primary" data-img={img16gb.src} data-desc="DDR5 16GB RAM 4800MT" onclick="showModal(this)">View</a>
+      <img src={img16gb.src} class="card-img-top h-48 w-full cursor-pointer object-cover" alt="DDR5 16GB RAM 4800MT" width="600" height="400" data-img={img16gb.src} data-desc="DDR5 16GB RAM 4800MT" onclick="showModal(this)" />
+      <div class="card-body p-4 text-center">
+        <h5 class="card-title text-lg font-bold">16GB RAM</h5>
+        <p class="card-text mb-3 text-sm text-slate-600">DDR5 16GB RAM 4800MT</p>
+        <a href="#" class="btn btn-primary inline-flex rounded-md bg-blue-700 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-800" data-img={img16gb.src} data-desc="DDR5 16GB RAM 4800MT" onclick="showModal(this)">View</a>
       </div>
     </div>
   </div>
@@ -45,13 +44,15 @@ import img16gb from "../assets/16gb.jpg";
 
 <!-- Modal for Ram Page -->
 
-<div id="modal" class="modal">
-  <span onclick="closeModal()" class="close">&times;</span>
-  <img id="modal-img" alt="" />
-  <div id="modal-desc"></div>
+<div id="modal" class="modal fixed inset-0 z-[1000] bg-black/85 px-4 pt-14" style="display:none;">
+  <span onclick="closeModal()" class="close absolute right-6 top-3 cursor-pointer text-4xl font-bold text-white/85 hover:text-white">&times;</span>
+  <img id="modal-img" class="mx-auto block max-h-[70vh] max-w-[90%] rounded-xl shadow-2xl" alt="" />
+  <div id="modal-desc" class="mx-auto mt-5 w-[90%] text-center text-slate-100"></div>
 </div>
 
 <script src="/AstroJs/Hover.js" is:inline></script>
+
+</main>
 
   </body>
   

@@ -1,55 +1,42 @@
 ---
 import Header from '../components/Header.astro';
-import '../styles/global.css';
-import '../styles/spec.css';
 import img3060 from '../assets/3060.png';
 import img3050 from '../assets/3050.jpg';
 ---
 <html>
 <head>
 </head>
-  <body>
+  <body class="min-h-screen bg-slate-100 text-slate-900">
   <Header />
- <!-- About 7 - Bootstrap Brain Component -->
-<section class="py-3 py-md-5 py-xl-8">
-  <!-- Side decorative dots -->
-  <div class="about-decor-left">
-    <span></span><span></span><span></span>
-  </div>
-  <div class="about-decor-right">
-    <span></span><span></span><span></span>
-  </div>
- <div class="container">
-  <div class="row justify-content-md-center">
-    <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
-      <h2 class="mb-4 display-5 text-center">Specs and Combo For a PC</h2>
-      <p class="text-secondary mb-5 text-center lead fs-4">Here are the specifications and combo for a PC:</p>
-      <div class="specs-gallery-vertical">
-        <div class="vision-card">
-          <div class="specs-row">
-          <p>CPU: Intel Core i7-11700K</p>
-          <p>RAM: 16GB DDR4</p>
-          <p>GPU: NVIDIA GeForce RTX 3060 Ti</p>
-          </div>
+<section class="mx-auto max-w-6xl px-4 py-8 md:px-8">
+  <div class="rounded-2xl bg-white p-6 shadow-lg">
+    <h2 class="mb-3 text-center text-4xl font-extrabold tracking-tight">Specs and Combo For a PC</h2>
+    <p class="mb-6 text-center text-slate-600">Here are the specifications and combo for a PC:</p>
 
-          <div class="gallery-container">
-            <div class="gallery-item"><img src={img3060.src} alt="Image 1"></div>
-          <div class="gallery-item"><img src={img3050.src} alt="Image 2"></div>
-          </div>
-          <div class ="specs-row">
-          <p> Storage: 1TB NVMe SSD</p>
-          <p>Motherboard: ASUS ROG Strix Z590-E Gaming</p>
-          <p>Power Supply: 750W 80 Plus Gold</p>
-          <p>Case: NZXT H510 Elite</p>
-        </div>
-        </div>
-        <div class="gallery-container">
-          
-          <div class="gallery-item"><img src="/assets/image3.jpg" alt="Image 3"></div>
-        </div>
+    <div class="rounded-xl border border-slate-200 bg-slate-50 p-5">
+      <div class="mb-4 flex flex-wrap gap-4 text-sm font-medium text-slate-700">
+        <p>CPU: Intel Core i7-11700K</p>
+        <p>RAM: 16GB DDR4</p>
+        <p>GPU: NVIDIA GeForce RTX 3060 Ti</p>
+      </div>
+
+      <div class="mb-5 flex flex-wrap gap-4">
+        <div class="gallery-item"><img src={img3060.src} alt="Image 1" class="h-40 w-56 rounded-lg object-cover shadow" /></div>
+        <div class="gallery-item"><img src={img3050.src} alt="Image 2" class="h-40 w-56 rounded-lg object-cover shadow" /></div>
+      </div>
+
+      <div class="flex flex-wrap gap-4 text-sm font-medium text-slate-700">
+        <p>Storage: 1TB NVMe SSD</p>
+        <p>Motherboard: ASUS ROG Strix Z590-E Gaming</p>
+        <p>Power Supply: 750W 80 Plus Gold</p>
+        <p>Case: NZXT H510 Elite</p>
+      </div>
+
+      <div class="mt-5">
+        <div class="gallery-item"><img src="/assets/image3.jpg" alt="Image 3" class="h-40 w-56 rounded-lg object-cover shadow" /></div>
       </div>
     </div>
   </div>
-</div>
+</section>
   </body>
   </html>

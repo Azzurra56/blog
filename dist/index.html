@@ -1,0 +1,174 @@
+<!DOCTYPE html><!-- Below is your "component template." It's just HTML, but with
+    some magic sprinkled in to help you build great templates. --><html> <head><link rel="icon" type="image/png" href="/STII.png"><link rel="stylesheet" href="/_astro/Beep.CVB7Vmxm.css"></head> <body class="min-h-screen bg-slate-100 text-slate-900"> <header class="site-header sticky top-0 z-50 border-b border-blue-700/50 bg-blue-700 text-white shadow-lg shadow-blue-900/30"> <div class="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-3 md:px-6"> <h2 class="text-xl font-bold tracking-wide">DOST STII</h2> <button id="nav-button" type="button" aria-label="Toggle navigation" class="inline-flex items-center rounded-md border border-white/40 p-2 md:hidden"> <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path> </svg> </button> <ul id="topnav" class="hidden items-center gap-2 md:flex"> <li><a href="/" class="rounded-md px-3 py-2 text-sm font-medium hover:bg-white/20">Home</a></li> <li><a href="/ram" class="rounded-md px-3 py-2 text-sm font-medium hover:bg-white/20">RAM</a></li> <li><a href="/" class="rounded-md px-3 py-2 text-sm font-medium hover:bg-white/20">GPU</a></li> <li><a href="/" class="rounded-md px-3 py-2 text-sm font-medium hover:bg-white/20">CPU</a></li> <li><a href="/issues" class="rounded-md px-3 py-2 text-sm font-medium hover:bg-white/20">Known Issues</a></li> <li><a href="/contact" class="rounded-md px-3 py-2 text-sm font-medium hover:bg-white/20">Contact</a></li> <li><a href="/about" class="rounded-md px-3 py-2 text-sm font-medium hover:bg-white/20">About</a></li> <li><a href="/spec" class="rounded-md px-3 py-2 text-sm font-medium hover:bg-white/20">Specs and Combo</a></li> <li><a href="/Beep" class="rounded-md px-3 py-2 text-sm font-medium hover:bg-white/20">MotherBoard Beep Code</a></li> </ul> </div> <ul id="mobile-nav" class="hidden space-y-1 border-t border-white/20 px-4 py-3 md:hidden"> <li><a href="/" class="block rounded-md px-3 py-2 text-sm font-medium hover:bg-white/20">Home</a></li> <li><a href="/ram" class="block rounded-md px-3 py-2 text-sm font-medium hover:bg-white/20">RAM</a></li> <li><a href="/" class="block rounded-md px-3 py-2 text-sm font-medium hover:bg-white/20">GPU</a></li> <li><a href="/" class="block rounded-md px-3 py-2 text-sm font-medium hover:bg-white/20">CPU</a></li> <li><a href="/issues" class="block rounded-md px-3 py-2 text-sm font-medium hover:bg-white/20">Known Issues</a></li> <li><a href="/contact" class="block rounded-md px-3 py-2 text-sm font-medium hover:bg-white/20">Contact</a></li> <li><a href="/about" class="block rounded-md px-3 py-2 text-sm font-medium hover:bg-white/20">About</a></li> <li><a href="/spec" class="block rounded-md px-3 py-2 text-sm font-medium hover:bg-white/20">Specs and Combo</a></li> <li><a href="/Beep" class="block rounded-md px-3 py-2 text-sm font-medium hover:bg-white/20">MotherBoard Beep Code</a></li> </ul> </header> <script>
+  const navButton = document.getElementById('nav-button');
+  const mobileNav = document.getElementById('mobile-nav');
+  const header = document.querySelector('.site-header');
+
+  if (navButton && mobileNav) {
+    navButton.addEventListener('click', function() {
+      mobileNav.classList.toggle('hidden');
+    });
+
+    mobileNav.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        mobileNav.classList.add('hidden');
+      });
+    });
+
+    document.addEventListener('click', function(e) {
+      if (!header.contains(e.target)) {
+        mobileNav.classList.add('hidden');
+      }
+    });
+  }
+</script> <div class="page-wrapper relative mx-auto max-w-7xl overflow-hidden px-4 pb-12 pt-6 md:px-8"> <div class="page-decor-left pointer-events-none absolute left-2 top-1/2 hidden -translate-y-1/2 flex-col gap-2 md:flex"><span class="h-2 w-2 rounded-full bg-blue-600/30"></span><span class="h-2 w-2 rounded-full bg-blue-600/20"></span><span class="h-2 w-2 rounded-full bg-blue-600/10"></span></div> <div class="page-decor-right pointer-events-none absolute right-2 top-1/2 hidden -translate-y-1/2 flex-col gap-2 md:flex"><span class="h-2 w-2 rounded-full bg-blue-600/30"></span><span class="h-2 w-2 rounded-full bg-blue-600/20"></span><span class="h-2 w-2 rounded-full bg-blue-600/10"></span></div> <h1 class="text-center text-3xl font-extrabold tracking-tight text-amber-600 drop-shadow-sm">Dost STII Hardware For Computer parts</h1> <h2 class="picture mt-8 text-xl font-bold text-blue-700">GPU</h2> <button class="btn mt-3 flex h-11 w-20 items-center justify-center rounded-full border-2 border-white bg-blue-700 text-white shadow-lg shadow-blue-900/30 transition hover:-translate-y-0.5 hover:bg-blue-800" id="collapse-btn" onclick="toggleGallery()" aria-label="Toggle GPU Gallery" aria-expanded="true"> <span class="arrow-icon text-lg" aria-hidden="true">&#9654;</span> </button> <div class="gallery mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3" role="grid" aria-label="GPU Gallery"> <div class="gallery-item relative cursor-pointer overflow-hidden rounded-2xl bg-white shadow-md transition hover:-translate-y-1 hover:shadow-2xl" role="gridcell" tabindex="0" aria-label="View RTX 5070 details"> <img class="h-56 w-full object-cover" src="/_astro/5070.GAAoXw8q.jpg" alt="NVIDIA GeForce RTX 5070 Graphics Card" width="600" height="400" loading="lazy" data-img="/_astro/5070.GAAoXw8q.jpg" data-desc="RTX 5070" data-index="0" onclick="showModal(this)"> <div class="desc absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 to-transparent px-4 pb-3 pt-8 text-center text-sm font-semibold text-white">RTX 5070</div> </div> <div class="gallery-item relative cursor-pointer overflow-hidden rounded-2xl bg-white shadow-md transition hover:-translate-y-1 hover:shadow-2xl" role="gridcell" tabindex="0" aria-label="View RTX 3080 details"> <img class="h-56 w-full object-cover" src="/_astro/3080.zTlWhqv6.png" alt="NVIDIA GeForce RTX 3080 Graphics Card" width="600" height="400" loading="lazy" data-img="/_astro/3080.zTlWhqv6.png" data-desc="RTX 3080" data-index="1" onclick="showModal(this)"> <div class="desc absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 to-transparent px-4 pb-3 pt-8 text-center text-sm font-semibold text-white">RTX 3080</div> </div> <div class="gallery-item relative cursor-pointer overflow-hidden rounded-2xl bg-white shadow-md transition hover:-translate-y-1 hover:shadow-2xl" role="gridcell" tabindex="0" aria-label="View RTX 3070 details"> <img class="h-56 w-full object-cover" src="/_astro/3070.qtzl4Ahj.jpg" alt="NVIDIA GeForce RTX 3070 Graphics Card" width="600" height="400" loading="lazy" data-img="/_astro/3070.qtzl4Ahj.jpg" data-desc="RTX 3070" data-index="2" onclick="showModal(this)"> <div class="desc absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 to-transparent px-4 pb-3 pt-8 text-center text-sm font-semibold text-white">RTX 3070</div> </div> <div class="gallery-item relative cursor-pointer overflow-hidden rounded-2xl bg-white shadow-md transition hover:-translate-y-1 hover:shadow-2xl" role="gridcell" tabindex="0" aria-label="View RTX 3060 details"> <img class="h-56 w-full object-cover" src="/_astro/3060.DRP1NKKF.png" alt="NVIDIA GeForce RTX 3060 Graphics Card" width="600" height="400" loading="lazy" data-img="/_astro/3060.DRP1NKKF.png" data-desc="RTX 3060" data-index="3" onclick="showModal(this)"> <div class="desc absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 to-transparent px-4 pb-3 pt-8 text-center text-sm font-semibold text-white">RTX 3060</div> </div> <div class="gallery-item relative cursor-pointer overflow-hidden rounded-2xl bg-white shadow-md transition hover:-translate-y-1 hover:shadow-2xl" role="gridcell" tabindex="0" aria-label="View RTX 3050 details"> <img class="h-56 w-full object-cover" src="/_astro/3050.DevOxSkV.jpg" alt="NVIDIA GeForce RTX 3050 Graphics Card" width="600" height="400" loading="lazy" data-img="/_astro/3050.DevOxSkV.jpg" data-desc="RTX 3050" data-index="4" onclick="showModal(this)"> <div class="desc absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 to-transparent px-4 pb-3 pt-8 text-center text-sm font-semibold text-white">RTX 3050</div> </div> <div class="gallery-item relative cursor-pointer overflow-hidden rounded-2xl bg-white shadow-md transition hover:-translate-y-1 hover:shadow-2xl" role="gridcell" tabindex="0" aria-label="View RTX 5060 details"> <img class="h-56 w-full object-cover" src="/_astro/5060.D58r0qIK.jpg" alt="NVIDIA GeForce RTX 5060 Graphics Card" width="600" height="400" loading="lazy" data-img="/_astro/5060.D58r0qIK.jpg" data-desc="RTX 5060" data-index="5" onclick="showModal(this)"> <div class="desc absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 to-transparent px-4 pb-3 pt-8 text-center text-sm font-semibold text-white">RTX 5060</div> </div> </div> </div> <!-- end page-wrapper --> <!-- Modal --> <div id="modal" class="modal fixed inset-0 z-[1000] bg-black/85 px-4 pt-14" style="display:none;" role="dialog" aria-hidden="true" aria-labelledby="modal-desc" aria-modal="true" tabindex="-1"> <span onclick="closeModal()" class="close absolute right-6 top-3 cursor-pointer text-4xl font-bold text-white/85 hover:text-white" aria-label="Close modal">&times;</span> <span class="modal-nav modal-prev absolute left-3 top-1/2 -translate-y-1/2 cursor-pointer rounded-full bg-white/15 px-4 py-2 text-3xl text-white backdrop-blur hover:bg-white/25" onclick="previousImage()" aria-label="Previous image">&#8249;</span> <span class="modal-nav modal-next absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer rounded-full bg-white/15 px-4 py-2 text-3xl text-white backdrop-blur hover:bg-white/25" onclick="nextImage()" aria-label="Next image">&#8250;</span> <img id="modal-img" class="mx-auto block max-h-[70vh] max-w-[90%] rounded-xl shadow-2xl" alt=""> <div id="modal-desc" class="mx-auto mt-5 w-[90%] text-center text-slate-100"></div> </div> <script src="/AstroJs/Hover.js"></script> <script>
+  let currentModalIndex = 0;
+  const galleryImages = [];
+  
+  // Initialize gallery data
+  function initGallery() {
+    const items = document.querySelectorAll('.gallery-item img');
+    items.forEach((img, index) => {
+      galleryImages.push({
+        src: img.dataset.img,
+        desc: img.dataset.desc,
+        alt: img.alt
+      });
+    });
+  }
+  
+  function toggleGallery() {
+    const gallery = document.querySelector('.gallery');
+    const btn = document.getElementById('collapse-btn');
+    const arrow = btn.querySelector('.arrow-icon');
+    const isHidden = gallery.style.display === 'none';
+    
+    if (isHidden) {
+      gallery.style.display = 'grid';
+      btn.classList.remove('open');
+      btn.classList.add('close');
+      btn.setAttribute('aria-expanded', 'true');
+      arrow.style.transform = 'rotate(0deg)';
+    } else {
+      gallery.style.display = 'none';
+      btn.classList.remove('close');
+      btn.classList.add('open');
+      btn.setAttribute('aria-expanded', 'false');
+      arrow.style.transform = 'rotate(90deg)';
+    }
+  }
+  
+  function showModal(img) {
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modal-img');
+    const modalDesc = document.getElementById('modal-desc');
+    
+    currentModalIndex = parseInt(img.dataset.index);
+    
+    modalImg.src = img.dataset.img;
+    modalImg.alt = img.alt;
+    modalDesc.textContent = img.dataset.desc;
+    
+    modal.style.display = 'block';
+    modal.setAttribute('aria-hidden', 'false');
+    modal.focus();
+    
+    // Prevent body scrolling
+    document.body.style.overflow = 'hidden';
+  }
+  
+  function closeModal() {
+    const modal = document.getElementById('modal');
+    modal.style.display = 'none';
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = 'auto';
+  }
+  
+  function nextImage() {
+    currentModalIndex = (currentModalIndex + 1) % galleryImages.length;
+    updateModalImage();
+  }
+  
+  function previousImage() {
+    currentModalIndex = (currentModalIndex - 1 + galleryImages.length) % galleryImages.length;
+    updateModalImage();
+  }
+  
+  function updateModalImage() {
+    const modalImg = document.getElementById('modal-img');
+    const modalDesc = document.getElementById('modal-desc');
+    const currentImage = galleryImages[currentModalIndex];
+    
+    modalImg.src = currentImage.src;
+    modalImg.alt = currentImage.alt;
+    modalDesc.textContent = currentImage.desc;
+  }
+
+  // Keyboard navigation and event listeners
+  document.addEventListener('DOMContentLoaded', function() {
+    initGallery();
+    
+    const modal = document.getElementById('modal');
+    
+    // Modal background click to close
+    if (modal) {
+      modal.addEventListener('click', function(event) {
+        if (event.target === modal) {
+          closeModal();
+        }
+      });
+    }
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', function(event) {
+      if (modal.style.display === 'block') {
+        switch(event.key) {
+          case 'Escape':
+            closeModal();
+            break;
+          case 'ArrowLeft':
+            previousImage();
+            break;
+          case 'ArrowRight':
+            nextImage();
+            break;
+        }
+      }
+    });
+    
+    // Gallery item keyboard navigation
+    document.querySelectorAll('.gallery-item').forEach(item => {
+      item.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          const img = this.querySelector('img');
+          showModal(img);
+        }
+      });
+    });
+    
+    // Touch/swipe support for mobile modal navigation
+    let touchStartX = null;
+    
+    modal.addEventListener('touchstart', function(e) {
+      touchStartX = e.touches[0].clientX;
+    });
+    
+    modal.addEventListener('touchend', function(e) {
+      if (touchStartX === null) return;
+      
+      const touchEndX = e.changedTouches[0].clientX;
+      const diff = touchStartX - touchEndX;
+      
+      if (Math.abs(diff) > 50) { // Minimum swipe distance
+        if (diff > 0) {
+          nextImage(); // Swipe left = next
+        } else {
+          previousImage(); // Swipe right = previous
+        }
+      }
+      
+      touchStartX = null;
+    });
+  });
+</script> </body> </html>
