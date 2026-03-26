@@ -7,6 +7,24 @@
 	--font-heading: "Montserrat", ui-sans-serif, system-ui, sans-serif;
 	--color-brand-500: #4169e1;
 	--color-brand-700: #1d4ed8;
+
+    /* Modern Body Text (Clean & Readable) */
+  --font-sans: "Inter", "Instrument Sans", system-ui, sans-serif;
+  
+  /* Elegant Luxury (Headings) */
+  --font-serif: "Playfair Display", "Instrument Serif", serif;
+  
+  /* Coding & Data (Clean Mono) */
+  --font-mono: "JetBrains Mono", "Fira Code", monospace;
+
+  /* Brand / Decorative (The 'Calans' feel) */
+  --font-display: "Calistoga", "Archivo Black", sans-serif;
+  
+  /* Signature / Script (Handdrawn style) */
+  --font-signature: "Dancing Script", "Cursive";
+  
+  /* Narrow / Impact (For tight spaces/sidebars) */
+  --font-narrow: "Inter Tight", "Arial Narrow", sans-serif;
 }
 
 @layer base {
